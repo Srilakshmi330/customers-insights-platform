@@ -1,0 +1,1001 @@
+sale_id,branch,city,customer_type,gender,product_name,product_category,unit_price,quantity,tax,total_price,reward_points,sale_date
+1,New York,New York,Member,Male,Shampoo,Personal Care,5.5,3,1.16,17.66,1,2025-01-01
+2,Los Angeles,Los Angeles,Normal,Female,Notebook,Stationery,2.75,10,1.93,29.43,0,2025-01-02
+3,New York,New York,Member,Female,Apple,Fruits,1.2,15,1.26,19.26,1,2025-01-03
+4,Chicago,Chicago,Normal,Male,Detergent,Household,7.8,5,2.73,41.73,0,2025-01-04
+5,Los Angeles,Los Angeles,Member,Female,Orange Juice,Beverages,3.5,7,1.72,26.22,2,2025-01-05
+6,Chicago,Chicago,Normal,Male,Shampoo,Stationery,11.24,9,7.08,108.24,0,2025-01-06
+7,Chicago,Chicago,Normal,Male,Shampoo,Personal Care,10.71,1,0.75,11.46,0,2025-01-07
+8,Los Angeles,Los Angeles,Normal,Female,Shampoo,Household,18.23,9,11.48,175.55,0,2025-01-08
+9,Chicago,Chicago,Member,Female,Apple,Fruits,14.15,20,19.81,302.81,30,2025-01-09
+10,Los Angeles,Los Angeles,Member,Male,Shampoo,Fruits,18.42,19,24.5,374.48,37,2025-01-10
+11,Chicago,Chicago,Normal,Male,Detergent,Beverages,9.32,7,4.57,69.81,0,2025-01-11
+12,Los Angeles,Los Angeles,Member,Male,Orange Juice,Household,6.89,12,5.79,88.47,8,2025-01-12
+13,New York,New York,Normal,Female,Orange Juice,Household,3.29,4,0.92,14.08,0,2025-01-13
+14,Los Angeles,Los Angeles,Member,Female,Apple,Fruits,8.81,5,3.08,47.13,4,2025-01-14
+15,Los Angeles,Los Angeles,Normal,Female,Apple,Beverages,19.48,3,4.09,62.53,0,2025-01-15
+16,Los Angeles,Los Angeles,Normal,Male,Notebook,Stationery,5.55,8,3.11,47.51,0,2025-01-16
+17,Los Angeles,Los Angeles,Member,Female,Apple,Personal Care,2.13,2,0.3,4.56,0,2025-01-17
+18,Los Angeles,Los Angeles,Normal,Male,Notebook,Fruits,13.26,15,13.92,212.82,0,2025-01-18
+19,New York,New York,Member,Male,Apple,Beverages,19.59,2,2.74,41.92,4,2025-01-19
+20,Chicago,Chicago,Normal,Male,Detergent,Personal Care,6.98,8,3.91,59.75,0,2025-01-20
+21,Los Angeles,Los Angeles,Normal,Female,Shampoo,Personal Care,4.36,11,3.36,51.32,0,2025-01-21
+22,Los Angeles,Los Angeles,Normal,Male,Orange Juice,Beverages,6.8,1,0.48,7.28,0,2025-01-22
+23,New York,New York,Member,Female,Shampoo,Beverages,1.95,16,2.18,33.38,3,2025-01-23
+24,Chicago,Chicago,Normal,Male,Apple,Fruits,19.05,2,2.67,40.77,0,2025-01-24
+25,Los Angeles,Los Angeles,Member,Male,Detergent,Beverages,11.33,18,14.28,218.22,21,2025-01-25
+26,Los Angeles,Los Angeles,Normal,Male,Notebook,Fruits,13.94,16,15.61,238.65,0,2025-01-26
+27,New York,New York,Member,Male,Detergent,Household,9.55,2,1.34,20.44,2,2025-01-27
+28,New York,New York,Member,Female,Detergent,Personal Care,16.46,17,19.59,299.41,29,2025-01-28
+29,Los Angeles,Los Angeles,Member,Female,Shampoo,Stationery,12.3,17,14.64,223.74,22,2025-01-29
+30,Chicago,Chicago,Member,Male,Orange Juice,Personal Care,12.37,15,12.99,198.54,19,2025-01-30
+31,Chicago,Chicago,Member,Male,Shampoo,Fruits,3.7,3,0.78,11.88,1,2025-01-31
+32,New York,New York,Member,Female,Orange Juice,Stationery,5.39,3,1.13,17.3,1,2025-02-01
+33,Los Angeles,Los Angeles,Normal,Male,Notebook,Stationery,6.94,17,8.26,126.24,0,2025-02-02
+34,Los Angeles,Los Angeles,Normal,Male,Orange Juice,Household,8.13,9,5.12,78.29,0,2025-02-03
+35,New York,New York,Member,Male,Apple,Personal Care,13.42,2,1.88,28.72,2,2025-02-04
+36,New York,New York,Member,Male,Detergent,Personal Care,13.14,15,13.8,210.9,21,2025-02-05
+37,Los Angeles,Los Angeles,Member,Male,Shampoo,Fruits,11.14,16,12.48,190.72,19,2025-02-06
+38,Los Angeles,Los Angeles,Member,Female,Notebook,Beverages,5.42,14,5.31,81.19,8,2025-02-07
+39,New York,New York,Member,Female,Notebook,Beverages,15.34,15,16.11,246.21,24,2025-02-08
+40,New York,New York,Normal,Female,Apple,Fruits,1.17,11,0.9,13.77,0,2025-02-09
+41,New York,New York,Member,Female,Notebook,Household,10.8,10,7.56,115.56,11,2025-02-10
+42,New York,New York,Normal,Male,Apple,Household,10.98,12,9.22,140.98,0,2025-02-11
+43,New York,New York,Normal,Female,Notebook,Fruits,4.17,2,0.58,8.92,0,2025-02-12
+44,Chicago,Chicago,Member,Male,Detergent,Fruits,20.13,2,2.82,43.08,4,2025-02-13
+45,Los Angeles,Los Angeles,Member,Female,Shampoo,Household,15.73,8,8.81,134.65,13,2025-02-14
+46,New York,New York,Member,Male,Shampoo,Fruits,15.95,8,8.93,136.53,13,2025-02-15
+47,New York,New York,Normal,Male,Shampoo,Stationery,1.28,8,0.72,10.96,0,2025-02-16
+48,Los Angeles,Los Angeles,Normal,Female,Detergent,Personal Care,9.98,20,13.97,213.57,0,2025-02-17
+49,Los Angeles,Los Angeles,Normal,Female,Detergent,Fruits,6.31,2,0.88,13.5,0,2025-02-18
+50,Chicago,Chicago,Normal,Female,Apple,Stationery,16.5,19,21.95,335.45,0,2025-02-19
+51,Chicago,Chicago,Normal,Male,Detergent,Stationery,17.02,19,22.64,346.02,0,2025-02-20
+52,Chicago,Chicago,Member,Male,Orange Juice,Fruits,11.16,5,3.91,59.71,5,2025-02-21
+53,Los Angeles,Los Angeles,Normal,Female,Orange Juice,Fruits,19.06,1,1.33,20.39,0,2025-02-22
+54,New York,New York,Normal,Female,Orange Juice,Fruits,4.68,14,4.59,70.11,0,2025-02-23
+55,Los Angeles,Los Angeles,Member,Male,Notebook,Household,15.57,13,14.17,216.58,21,2025-02-24
+56,Chicago,Chicago,Member,Male,Shampoo,Personal Care,19.86,10,13.9,212.5,21,2025-02-25
+57,Chicago,Chicago,Member,Female,Orange Juice,Beverages,20.41,19,27.15,414.94,41,2025-02-26
+58,Chicago,Chicago,Normal,Male,Notebook,Fruits,19.96,20,27.94,427.14,0,2025-02-27
+59,Chicago,Chicago,Member,Male,Detergent,Stationery,15.48,20,21.67,331.27,33,2025-02-28
+60,Chicago,Chicago,Member,Male,Notebook,Stationery,13.99,4,3.92,59.88,5,2025-03-01
+61,New York,New York,Member,Male,Detergent,Household,9.39,2,1.31,20.09,2,2025-03-02
+62,Chicago,Chicago,Member,Male,Orange Juice,Beverages,19.19,14,18.81,287.47,28,2025-03-03
+63,New York,New York,Member,Male,Notebook,Stationery,12.73,19,16.93,258.8,25,2025-03-04
+64,Chicago,Chicago,Member,Female,Detergent,Household,11.33,10,7.93,121.23,12,2025-03-05
+65,New York,New York,Normal,Male,Orange Juice,Household,8.78,12,7.38,112.74,0,2025-03-06
+66,New York,New York,Member,Male,Notebook,Personal Care,10.25,2,1.44,21.94,2,2025-03-07
+67,Los Angeles,Los Angeles,Member,Male,Notebook,Stationery,10.47,8,5.86,89.62,8,2025-03-08
+68,New York,New York,Normal,Female,Detergent,Fruits,6.75,1,0.47,7.22,0,2025-03-09
+69,Chicago,Chicago,Member,Male,Apple,Personal Care,1.17,16,1.31,20.03,2,2025-03-10
+70,Los Angeles,Los Angeles,Normal,Female,Shampoo,Stationery,2.77,14,2.71,41.49,0,2025-03-11
+71,Chicago,Chicago,Normal,Male,Orange Juice,Stationery,12.83,2,1.8,27.46,0,2025-03-12
+72,New York,New York,Normal,Female,Apple,Fruits,14.21,11,10.94,167.25,0,2025-03-13
+73,Chicago,Chicago,Normal,Male,Detergent,Fruits,7.27,20,10.18,155.58,0,2025-03-14
+74,New York,New York,Normal,Female,Shampoo,Stationery,20.27,2,2.84,43.38,0,2025-03-15
+75,New York,New York,Normal,Male,Orange Juice,Fruits,8.62,11,6.64,101.46,0,2025-03-16
+76,New York,New York,Normal,Male,Shampoo,Personal Care,19.14,8,10.72,163.84,0,2025-03-17
+77,Los Angeles,Los Angeles,Normal,Female,Orange Juice,Stationery,10.16,10,7.11,108.71,0,2025-03-18
+78,Chicago,Chicago,Normal,Male,Apple,Beverages,6.73,20,9.42,144.02,0,2025-03-19
+79,Los Angeles,Los Angeles,Normal,Female,Notebook,Beverages,14.18,11,10.92,166.9,0,2025-03-20
+80,New York,New York,Member,Male,Notebook,Stationery,16.6,16,18.59,284.19,28,2025-03-21
+81,Chicago,Chicago,Normal,Female,Orange Juice,Household,13.36,20,18.7,285.9,0,2025-03-22
+82,Chicago,Chicago,Member,Male,Orange Juice,Fruits,14.04,15,14.74,225.34,22,2025-03-23
+83,Los Angeles,Los Angeles,Normal,Male,Orange Juice,Household,13.89,8,7.78,118.9,0,2025-03-24
+84,New York,New York,Member,Female,Notebook,Beverages,17.56,10,12.29,187.89,18,2025-03-25
+85,Chicago,Chicago,Normal,Female,Detergent,Household,3.79,13,3.45,52.72,0,2025-03-26
+86,Los Angeles,Los Angeles,Normal,Male,Orange Juice,Beverages,5.0,10,3.5,53.5,0,2025-03-27
+87,Chicago,Chicago,Member,Female,Shampoo,Fruits,2.74,2,0.38,5.86,0,2025-03-28
+88,New York,New York,Normal,Female,Orange Juice,Stationery,13.87,8,7.77,118.73,0,2025-03-29
+89,Chicago,Chicago,Normal,Male,Detergent,Beverages,19.61,2,2.75,41.97,0,2025-03-30
+90,Los Angeles,Los Angeles,Normal,Male,Notebook,Household,10.71,10,7.5,114.6,0,2025-03-31
+91,Chicago,Chicago,Member,Female,Orange Juice,Household,18.57,3,3.9,59.61,5,2025-04-01
+92,Los Angeles,Los Angeles,Member,Male,Notebook,Personal Care,19.1,2,2.67,40.87,4,2025-04-02
+93,New York,New York,Member,Female,Apple,Stationery,10.03,12,8.43,128.79,12,2025-04-03
+94,Los Angeles,Los Angeles,Member,Female,Orange Juice,Fruits,5.65,9,3.56,54.41,5,2025-04-04
+95,Los Angeles,Los Angeles,Normal,Female,Shampoo,Stationery,18.04,9,11.37,173.73,0,2025-04-05
+96,New York,New York,Member,Male,Apple,Beverages,6.9,1,0.48,7.38,0,2025-04-06
+97,Los Angeles,Los Angeles,Member,Male,Orange Juice,Beverages,18.78,17,22.35,341.61,34,2025-04-07
+98,Los Angeles,Los Angeles,Normal,Male,Notebook,Personal Care,15.55,3,3.27,49.92,0,2025-04-08
+99,New York,New York,Normal,Male,Detergent,Fruits,15.25,17,18.15,277.4,0,2025-04-09
+100,Chicago,Chicago,Member,Male,Notebook,Beverages,10.62,18,13.38,204.54,20,2025-04-10
+101,Los Angeles,Los Angeles,Member,Male,Orange Juice,Household,4.24,20,5.94,90.74,9,2025-04-11
+102,New York,New York,Normal,Female,Notebook,Beverages,16.69,4,4.67,71.43,0,2025-04-12
+103,New York,New York,Normal,Male,Orange Juice,Personal Care,8.89,9,5.6,85.61,0,2025-04-13
+104,New York,New York,Normal,Male,Shampoo,Beverages,18.24,18,22.98,351.3,0,2025-04-14
+105,Los Angeles,Los Angeles,Member,Female,Orange Juice,Beverages,6.23,18,7.85,119.99,11,2025-04-15
+106,Chicago,Chicago,Normal,Male,Apple,Household,1.02,2,0.14,2.18,0,2025-04-16
+107,New York,New York,Member,Female,Detergent,Personal Care,4.5,6,1.89,28.89,2,2025-04-17
+108,Los Angeles,Los Angeles,Normal,Male,Detergent,Stationery,7.31,15,7.68,117.33,0,2025-04-18
+109,Los Angeles,Los Angeles,Normal,Male,Orange Juice,Fruits,16.9,9,10.65,162.75,0,2025-04-19
+110,New York,New York,Member,Female,Detergent,Beverages,5.91,13,5.38,82.21,8,2025-04-20
+111,Chicago,Chicago,Member,Female,Apple,Household,14.97,9,9.43,144.16,14,2025-04-21
+112,New York,New York,Member,Male,Apple,Beverages,10.04,9,6.33,96.69,9,2025-04-22
+113,Chicago,Chicago,Member,Male,Apple,Beverages,20.89,3,4.39,67.06,6,2025-04-23
+114,Chicago,Chicago,Member,Female,Detergent,Fruits,9.38,15,9.85,150.55,15,2025-04-24
+115,New York,New York,Normal,Male,Orange Juice,Personal Care,4.77,11,3.67,56.14,0,2025-04-25
+116,New York,New York,Normal,Female,Apple,Personal Care,7.01,19,9.32,142.51,0,2025-04-26
+117,Chicago,Chicago,Member,Male,Shampoo,Stationery,12.65,18,15.94,243.64,24,2025-04-27
+118,Los Angeles,Los Angeles,Member,Female,Detergent,Fruits,5.42,16,6.07,92.79,9,2025-04-28
+119,Chicago,Chicago,Normal,Female,Apple,Stationery,17.61,7,8.63,131.9,0,2025-04-29
+120,New York,New York,Normal,Male,Orange Juice,Beverages,4.64,9,2.92,44.68,0,2025-04-30
+121,Los Angeles,Los Angeles,Member,Female,Notebook,Personal Care,1.68,4,0.47,7.19,0,2025-05-01
+122,New York,New York,Normal,Female,Detergent,Household,3.2,12,2.69,41.09,0,2025-05-02
+123,Chicago,Chicago,Normal,Male,Shampoo,Personal Care,3.33,11,2.56,39.19,0,2025-05-03
+124,New York,New York,Member,Female,Detergent,Household,14.91,4,4.17,63.81,6,2025-05-04
+125,New York,New York,Member,Male,Shampoo,Household,6.84,6,2.87,43.91,4,2025-05-05
+126,New York,New York,Member,Female,Detergent,Fruits,20.37,10,14.26,217.96,21,2025-05-06
+127,New York,New York,Normal,Male,Apple,Beverages,1.09,10,0.76,11.66,0,2025-05-07
+128,Chicago,Chicago,Member,Female,Notebook,Fruits,2.78,5,0.97,14.87,1,2025-05-08
+129,Chicago,Chicago,Member,Female,Shampoo,Beverages,15.52,4,4.35,66.43,6,2025-05-09
+130,Los Angeles,Los Angeles,Member,Female,Shampoo,Household,13.18,16,14.76,225.64,22,2025-05-10
+131,New York,New York,Normal,Male,Shampoo,Personal Care,6.17,19,8.21,125.44,0,2025-05-11
+132,Chicago,Chicago,Normal,Male,Orange Juice,Household,12.01,17,14.29,218.46,0,2025-05-12
+133,Chicago,Chicago,Normal,Male,Apple,Fruits,17.25,14,16.91,258.41,0,2025-05-13
+134,New York,New York,Member,Female,Apple,Beverages,17.25,11,13.28,203.03,20,2025-05-14
+135,New York,New York,Member,Female,Notebook,Beverages,20.58,19,27.37,418.39,41,2025-05-15
+136,Los Angeles,Los Angeles,Normal,Female,Apple,Beverages,4.91,1,0.34,5.25,0,2025-05-16
+137,Los Angeles,Los Angeles,Member,Female,Apple,Household,18.05,2,2.53,38.63,3,2025-05-17
+138,Los Angeles,Los Angeles,Member,Male,Notebook,Household,4.66,18,5.87,89.75,8,2025-05-18
+139,Chicago,Chicago,Member,Male,Shampoo,Fruits,4.89,14,4.79,73.25,7,2025-05-19
+140,Los Angeles,Los Angeles,Member,Female,Orange Juice,Personal Care,9.71,13,8.84,135.07,13,2025-05-20
+141,Chicago,Chicago,Normal,Female,Notebook,Fruits,3.44,6,1.44,22.08,0,2025-05-21
+142,New York,New York,Member,Female,Notebook,Household,14.58,7,7.14,109.2,10,2025-05-22
+143,New York,New York,Member,Male,Shampoo,Personal Care,16.69,7,8.18,125.01,12,2025-05-23
+144,Chicago,Chicago,Member,Male,Shampoo,Beverages,9.72,16,10.89,166.41,16,2025-05-24
+145,Los Angeles,Los Angeles,Normal,Male,Shampoo,Fruits,15.96,2,2.23,34.15,0,2025-05-25
+146,New York,New York,Member,Male,Apple,Stationery,11.42,20,15.99,244.39,24,2025-05-26
+147,New York,New York,Normal,Male,Notebook,Beverages,5.01,12,4.21,64.33,0,2025-05-27
+148,Chicago,Chicago,Member,Male,Notebook,Household,2.27,9,1.43,21.86,2,2025-05-28
+149,New York,New York,Member,Female,Shampoo,Personal Care,13.07,19,17.38,265.71,26,2025-05-29
+150,New York,New York,Normal,Female,Notebook,Beverages,5.83,14,5.71,87.33,0,2025-05-30
+151,Chicago,Chicago,Normal,Male,Shampoo,Household,20.06,14,19.66,300.5,0,2025-05-31
+152,Chicago,Chicago,Normal,Male,Orange Juice,Household,19.89,10,13.92,212.82,0,2025-06-01
+153,Chicago,Chicago,Normal,Male,Notebook,Personal Care,5.56,19,7.39,113.03,0,2025-06-02
+154,Los Angeles,Los Angeles,Normal,Male,Detergent,Stationery,17.21,1,1.2,18.41,0,2025-06-03
+155,Chicago,Chicago,Member,Male,Apple,Stationery,11.38,11,8.76,133.94,13,2025-06-04
+156,Chicago,Chicago,Member,Male,Orange Juice,Stationery,5.33,20,7.46,114.06,11,2025-06-05
+157,New York,New York,Normal,Female,Shampoo,Beverages,18.79,20,26.31,402.11,0,2025-06-06
+158,New York,New York,Normal,Male,Shampoo,Fruits,19.04,1,1.33,20.37,0,2025-06-07
+159,New York,New York,Normal,Female,Notebook,Household,19.82,11,15.26,233.28,0,2025-06-08
+160,Chicago,Chicago,Member,Female,Orange Juice,Household,9.31,2,1.3,19.92,1,2025-06-09
+161,Chicago,Chicago,Member,Male,Orange Juice,Stationery,20.91,19,27.81,425.1,42,2025-06-10
+162,New York,New York,Member,Female,Shampoo,Fruits,15.06,4,4.22,64.46,6,2025-06-11
+163,Los Angeles,Los Angeles,Normal,Male,Orange Juice,Fruits,17.61,11,13.56,207.27,0,2025-06-12
+164,Los Angeles,Los Angeles,Normal,Male,Notebook,Personal Care,20.76,8,11.63,177.71,0,2025-06-13
+165,Chicago,Chicago,Member,Female,Detergent,Stationery,11.92,18,15.02,229.58,22,2025-06-14
+166,Los Angeles,Los Angeles,Normal,Male,Detergent,Personal Care,14.17,18,17.85,272.91,0,2025-06-15
+167,Los Angeles,Los Angeles,Normal,Male,Apple,Stationery,6.56,10,4.59,70.19,0,2025-06-16
+168,Chicago,Chicago,Member,Male,Detergent,Beverages,9.63,12,8.09,123.65,12,2025-06-17
+169,New York,New York,Member,Male,Orange Juice,Household,17.99,4,5.04,77.0,7,2025-06-18
+170,Los Angeles,Los Angeles,Normal,Female,Detergent,Fruits,5.36,12,4.5,68.82,0,2025-06-19
+171,New York,New York,Member,Female,Orange Juice,Fruits,11.53,5,4.04,61.69,6,2025-06-20
+172,Los Angeles,Los Angeles,Normal,Female,Shampoo,Fruits,14.82,15,15.56,237.86,0,2025-06-21
+173,New York,New York,Member,Female,Apple,Fruits,14.83,20,20.76,317.36,31,2025-06-22
+174,Los Angeles,Los Angeles,Member,Male,Shampoo,Stationery,5.09,3,1.07,16.34,1,2025-06-23
+175,New York,New York,Normal,Male,Detergent,Household,17.32,15,18.19,277.99,0,2025-06-24
+176,Los Angeles,Los Angeles,Member,Female,Shampoo,Fruits,14.31,1,1.0,15.31,1,2025-06-25
+177,Los Angeles,Los Angeles,Member,Male,Orange Juice,Fruits,1.21,10,0.85,12.95,1,2025-06-26
+178,Chicago,Chicago,Member,Male,Notebook,Personal Care,11.85,10,8.3,126.8,12,2025-06-27
+179,New York,New York,Member,Male,Notebook,Fruits,4.6,3,0.97,14.77,1,2025-06-28
+180,Los Angeles,Los Angeles,Member,Female,Orange Juice,Household,6.78,4,1.9,29.02,2,2025-06-29
+181,Los Angeles,Los Angeles,Member,Female,Notebook,Fruits,15.13,17,18.0,275.21,27,2025-01-01
+182,New York,New York,Normal,Female,Detergent,Stationery,3.14,8,1.76,26.88,0,2025-01-02
+183,Chicago,Chicago,Normal,Female,Notebook,Stationery,4.37,15,4.59,70.14,0,2025-01-03
+184,New York,New York,Member,Female,Shampoo,Fruits,18.7,14,18.33,280.13,28,2025-01-04
+185,Chicago,Chicago,Member,Female,Notebook,Beverages,19.12,16,21.41,327.33,32,2025-01-05
+186,Los Angeles,Los Angeles,Member,Female,Notebook,Beverages,11.99,3,2.52,38.49,3,2025-01-06
+187,New York,New York,Member,Male,Notebook,Fruits,9.72,15,10.21,156.01,15,2025-01-07
+188,Chicago,Chicago,Normal,Male,Notebook,Household,5.72,5,2.0,30.6,0,2025-01-08
+189,Chicago,Chicago,Member,Male,Shampoo,Household,14.87,3,3.12,47.73,4,2025-01-09
+190,Los Angeles,Los Angeles,Member,Female,Shampoo,Fruits,9.66,11,7.44,113.7,11,2025-01-10
+191,New York,New York,Member,Male,Orange Juice,Stationery,3.57,13,3.25,49.66,4,2025-01-11
+192,New York,New York,Member,Female,Detergent,Stationery,5.5,10,3.85,58.85,5,2025-01-12
+193,Los Angeles,Los Angeles,Normal,Male,Apple,Household,2.45,3,0.51,7.86,0,2025-01-13
+194,Chicago,Chicago,Member,Female,Shampoo,Beverages,9.57,4,2.68,40.96,4,2025-01-14
+195,Los Angeles,Los Angeles,Member,Male,Notebook,Household,2.61,4,0.73,11.17,1,2025-01-15
+196,New York,New York,Normal,Female,Apple,Fruits,8.98,6,3.77,57.65,0,2025-01-16
+197,New York,New York,Member,Female,Notebook,Stationery,19.49,15,20.46,312.81,31,2025-01-17
+198,Chicago,Chicago,Member,Male,Orange Juice,Personal Care,6.8,18,8.57,130.97,13,2025-01-18
+199,Los Angeles,Los Angeles,Member,Male,Notebook,Fruits,9.84,16,11.02,168.46,16,2025-01-19
+200,Chicago,Chicago,Normal,Female,Apple,Fruits,11.39,6,4.78,73.12,0,2025-01-20
+201,New York,New York,Normal,Female,Detergent,Personal Care,8.3,13,7.55,115.45,0,2025-01-21
+202,New York,New York,Member,Female,Detergent,Household,10.9,8,6.1,93.3,9,2025-01-22
+203,Los Angeles,Los Angeles,Member,Female,Shampoo,Fruits,3.0,20,4.2,64.2,6,2025-01-23
+204,Chicago,Chicago,Member,Female,Detergent,Household,16.5,10,11.55,176.55,17,2025-01-24
+205,New York,New York,Normal,Female,Orange Juice,Personal Care,20.06,5,7.02,107.32,0,2025-01-25
+206,New York,New York,Normal,Female,Shampoo,Household,10.73,7,5.26,80.37,0,2025-01-26
+207,Los Angeles,Los Angeles,Normal,Female,Detergent,Stationery,8.46,18,10.66,162.94,0,2025-01-27
+208,New York,New York,Member,Female,Shampoo,Fruits,6.76,20,9.46,144.66,14,2025-01-28
+209,Los Angeles,Los Angeles,Normal,Male,Orange Juice,Personal Care,8.71,7,4.27,65.24,0,2025-01-29
+210,Los Angeles,Los Angeles,Member,Female,Notebook,Beverages,6.91,18,8.71,133.09,13,2025-01-30
+211,Chicago,Chicago,Member,Female,Notebook,Stationery,16.18,15,16.99,259.69,25,2025-01-31
+212,Chicago,Chicago,Member,Female,Detergent,Stationery,12.5,17,14.88,227.38,22,2025-02-01
+213,New York,New York,Normal,Male,Orange Juice,Fruits,17.55,16,19.66,300.46,0,2025-02-02
+214,New York,New York,Normal,Male,Notebook,Household,17.59,1,1.23,18.82,0,2025-02-03
+215,Los Angeles,Los Angeles,Member,Female,Notebook,Beverages,6.7,19,8.91,136.21,13,2025-02-04
+216,New York,New York,Member,Female,Shampoo,Fruits,18.35,2,2.57,39.27,3,2025-02-05
+217,New York,New York,Normal,Female,Orange Juice,Stationery,7.09,16,7.94,121.38,0,2025-02-06
+218,Chicago,Chicago,Member,Male,Detergent,Household,19.96,9,12.57,192.21,19,2025-02-07
+219,Los Angeles,Los Angeles,Normal,Male,Shampoo,Stationery,3.01,16,3.37,51.53,0,2025-02-08
+220,New York,New York,Member,Male,Detergent,Fruits,4.8,13,4.37,66.77,6,2025-02-09
+221,Los Angeles,Los Angeles,Normal,Female,Orange Juice,Personal Care,5.86,17,6.97,106.59,0,2025-02-10
+222,Los Angeles,Los Angeles,Member,Female,Orange Juice,Personal Care,17.55,19,23.34,356.79,35,2025-02-11
+223,New York,New York,Member,Male,Shampoo,Stationery,14.47,5,5.06,77.41,7,2025-02-12
+224,Chicago,Chicago,Member,Female,Orange Juice,Personal Care,7.91,14,7.75,118.49,11,2025-02-13
+225,Chicago,Chicago,Member,Male,Apple,Stationery,5.11,19,6.8,103.89,10,2025-02-14
+226,Chicago,Chicago,Member,Male,Shampoo,Fruits,17.62,16,19.73,301.65,30,2025-02-15
+227,New York,New York,Member,Male,Shampoo,Beverages,12.79,3,2.69,41.06,4,2025-02-16
+228,New York,New York,Normal,Male,Apple,Personal Care,9.59,1,0.67,10.26,0,2025-02-17
+229,New York,New York,Normal,Female,Notebook,Fruits,2.58,14,2.53,38.65,0,2025-02-18
+230,New York,New York,Normal,Male,Shampoo,Household,15.08,12,12.67,193.63,0,2025-02-19
+231,New York,New York,Member,Male,Shampoo,Household,10.4,1,0.73,11.13,1,2025-02-20
+232,Chicago,Chicago,Normal,Male,Shampoo,Household,1.07,4,0.3,4.58,0,2025-02-21
+233,New York,New York,Normal,Male,Shampoo,Personal Care,2.83,6,1.19,18.17,0,2025-02-22
+234,Chicago,Chicago,Member,Male,Notebook,Fruits,4.63,5,1.62,24.77,2,2025-02-23
+235,New York,New York,Normal,Female,Apple,Household,12.78,2,1.79,27.35,0,2025-02-24
+236,Chicago,Chicago,Member,Male,Apple,Household,11.56,16,12.95,197.91,19,2025-02-25
+237,Los Angeles,Los Angeles,Normal,Female,Detergent,Household,18.1,8,10.14,154.94,0,2025-02-26
+238,New York,New York,Member,Male,Shampoo,Beverages,7.6,1,0.53,8.13,0,2025-02-27
+239,Chicago,Chicago,Member,Male,Shampoo,Beverages,19.85,15,20.84,318.59,31,2025-02-28
+240,Los Angeles,Los Angeles,Normal,Male,Shampoo,Fruits,10.77,16,12.06,184.38,0,2025-03-01
+241,Los Angeles,Los Angeles,Normal,Male,Shampoo,Household,3.61,10,2.53,38.63,0,2025-03-02
+242,New York,New York,Normal,Female,Shampoo,Stationery,6.77,13,6.16,94.17,0,2025-03-03
+243,Chicago,Chicago,Normal,Female,Shampoo,Personal Care,10.22,6,4.29,65.61,0,2025-03-04
+244,Los Angeles,Los Angeles,Normal,Female,Apple,Personal Care,12.47,15,13.09,200.14,0,2025-03-05
+245,Chicago,Chicago,Normal,Male,Shampoo,Household,15.54,16,17.4,266.04,0,2025-03-06
+246,New York,New York,Member,Female,Notebook,Beverages,18.3,9,11.53,176.23,17,2025-03-07
+247,Chicago,Chicago,Normal,Male,Detergent,Beverages,8.81,3,1.85,28.28,0,2025-03-08
+248,New York,New York,Member,Male,Apple,Fruits,13.53,17,16.1,246.11,24,2025-03-09
+249,New York,New York,Normal,Female,Detergent,Personal Care,9.61,19,12.78,195.37,0,2025-03-10
+250,Los Angeles,Los Angeles,Member,Female,Apple,Beverages,10.17,18,12.81,195.87,19,2025-03-11
+251,Chicago,Chicago,Member,Female,Notebook,Personal Care,15.34,8,8.59,131.31,13,2025-03-12
+252,Los Angeles,Los Angeles,Member,Female,Apple,Household,19.5,13,17.75,271.25,27,2025-03-13
+253,New York,New York,Member,Male,Orange Juice,Fruits,20.81,5,7.28,111.33,11,2025-03-14
+254,Chicago,Chicago,Normal,Female,Orange Juice,Fruits,20.25,4,5.67,86.67,0,2025-03-15
+255,Los Angeles,Los Angeles,Normal,Male,Apple,Beverages,4.37,4,1.22,18.7,0,2025-03-16
+256,Los Angeles,Los Angeles,Normal,Male,Apple,Beverages,17.95,12,15.08,230.48,0,2025-03-17
+257,New York,New York,Member,Male,Apple,Household,3.32,7,1.63,24.87,2,2025-03-18
+258,Chicago,Chicago,Member,Female,Apple,Fruits,18.14,19,24.13,368.79,36,2025-03-19
+259,Chicago,Chicago,Member,Male,Shampoo,Stationery,6.62,8,3.71,56.67,5,2025-03-20
+260,Los Angeles,Los Angeles,Member,Female,Shampoo,Beverages,14.94,10,10.46,159.86,15,2025-03-21
+261,Los Angeles,Los Angeles,Member,Male,Notebook,Beverages,20.02,19,26.63,407.01,40,2025-03-22
+262,New York,New York,Normal,Male,Shampoo,Beverages,17.65,5,6.18,94.43,0,2025-03-23
+263,New York,New York,Normal,Female,Detergent,Household,11.67,11,8.99,137.36,0,2025-03-24
+264,Los Angeles,Los Angeles,Member,Male,Shampoo,Household,17.1,1,1.2,18.3,1,2025-03-25
+265,Los Angeles,Los Angeles,Member,Female,Detergent,Household,2.39,10,1.67,25.57,2,2025-03-26
+266,Los Angeles,Los Angeles,Member,Female,Shampoo,Stationery,2.14,13,1.95,29.77,2,2025-03-27
+267,Los Angeles,Los Angeles,Member,Male,Notebook,Personal Care,6.41,7,3.14,48.01,4,2025-03-28
+268,Los Angeles,Los Angeles,Normal,Male,Orange Juice,Personal Care,5.94,13,5.41,82.63,0,2025-03-29
+269,Los Angeles,Los Angeles,Member,Male,Orange Juice,Household,17.33,17,20.62,315.23,31,2025-03-30
+270,Chicago,Chicago,Normal,Female,Notebook,Stationery,16.05,18,20.22,309.12,0,2025-03-31
+271,Chicago,Chicago,Normal,Male,Orange Juice,Personal Care,17.89,1,1.25,19.14,0,2025-04-01
+272,New York,New York,Member,Female,Detergent,Beverages,14.76,12,12.4,189.52,18,2025-04-02
+273,New York,New York,Normal,Male,Notebook,Personal Care,5.0,9,3.15,48.15,0,2025-04-03
+274,New York,New York,Member,Male,Orange Juice,Stationery,6.42,5,2.25,34.35,3,2025-04-04
+275,Los Angeles,Los Angeles,Member,Male,Notebook,Beverages,6.37,17,7.58,115.87,11,2025-04-05
+276,Los Angeles,Los Angeles,Normal,Male,Detergent,Stationery,6.74,16,7.55,115.39,0,2025-04-06
+277,New York,New York,Normal,Female,Apple,Household,15.7,12,13.19,201.59,0,2025-04-07
+278,Los Angeles,Los Angeles,Member,Male,Detergent,Fruits,19.93,8,11.16,170.6,17,2025-04-08
+279,Los Angeles,Los Angeles,Normal,Male,Notebook,Personal Care,2.4,17,2.86,43.66,0,2025-04-09
+280,Los Angeles,Los Angeles,Normal,Female,Shampoo,Stationery,1.94,6,0.81,12.45,0,2025-04-10
+281,Los Angeles,Los Angeles,Member,Male,Shampoo,Fruits,4.31,6,1.81,27.67,2,2025-04-11
+282,New York,New York,Member,Female,Detergent,Stationery,15.53,1,1.09,16.62,1,2025-04-12
+283,Chicago,Chicago,Normal,Female,Detergent,Personal Care,18.01,4,5.04,77.08,0,2025-04-13
+284,Los Angeles,Los Angeles,Member,Male,Shampoo,Personal Care,7.79,10,5.45,83.35,8,2025-04-14
+285,Los Angeles,Los Angeles,Member,Male,Orange Juice,Beverages,1.5,4,0.42,6.42,0,2025-04-15
+286,Chicago,Chicago,Normal,Male,Detergent,Stationery,1.45,11,1.12,17.07,0,2025-04-16
+287,Chicago,Chicago,Normal,Female,Apple,Fruits,8.8,6,3.7,56.5,0,2025-04-17
+288,New York,New York,Normal,Female,Detergent,Household,1.92,19,2.55,39.03,0,2025-04-18
+289,Los Angeles,Los Angeles,Normal,Female,Detergent,Beverages,20.43,8,11.44,174.88,0,2025-04-19
+290,New York,New York,Normal,Female,Shampoo,Personal Care,18.24,6,7.66,117.1,0,2025-04-20
+291,Chicago,Chicago,Member,Female,Detergent,Fruits,2.16,18,2.72,41.6,4,2025-04-21
+292,New York,New York,Member,Female,Notebook,Personal Care,8.74,16,9.79,149.63,14,2025-04-22
+293,New York,New York,Member,Female,Apple,Household,18.32,9,11.54,176.42,17,2025-04-23
+294,Los Angeles,Los Angeles,Normal,Male,Shampoo,Stationery,3.79,19,5.04,77.05,0,2025-04-24
+295,Los Angeles,Los Angeles,Member,Male,Orange Juice,Stationery,12.24,2,1.71,26.19,2,2025-04-25
+296,New York,New York,Normal,Male,Detergent,Beverages,1.76,5,0.62,9.42,0,2025-04-26
+297,Los Angeles,Los Angeles,Member,Male,Orange Juice,Household,13.6,7,6.66,101.86,10,2025-04-27
+298,New York,New York,Member,Female,Detergent,Fruits,11.97,7,5.87,89.66,8,2025-04-28
+299,Chicago,Chicago,Normal,Female,Orange Juice,Personal Care,13.49,15,14.16,216.51,0,2025-04-29
+300,New York,New York,Normal,Male,Apple,Stationery,9.85,12,8.27,126.47,0,2025-04-30
+301,New York,New York,Member,Male,Shampoo,Household,13.68,7,6.7,102.46,10,2025-05-01
+302,Chicago,Chicago,Normal,Male,Notebook,Beverages,14.79,18,18.64,284.86,0,2025-05-02
+303,Chicago,Chicago,Member,Female,Orange Juice,Household,9.74,17,11.59,177.17,17,2025-05-03
+304,New York,New York,Normal,Male,Shampoo,Beverages,6.94,14,6.8,103.96,0,2025-05-04
+305,Chicago,Chicago,Member,Female,Apple,Fruits,2.78,2,0.39,5.95,0,2025-05-05
+306,Chicago,Chicago,Member,Male,Apple,Personal Care,17.58,1,1.23,18.81,1,2025-05-06
+307,Los Angeles,Los Angeles,Normal,Female,Detergent,Personal Care,14.2,1,0.99,15.19,0,2025-05-07
+308,Los Angeles,Los Angeles,Member,Male,Detergent,Fruits,8.26,4,2.31,35.35,3,2025-05-08
+309,New York,New York,Member,Male,Orange Juice,Beverages,8.62,1,0.6,9.22,0,2025-05-09
+310,Chicago,Chicago,Member,Male,Orange Juice,Household,8.02,17,9.54,145.88,14,2025-05-10
+311,Chicago,Chicago,Member,Female,Apple,Fruits,20.18,5,7.06,107.96,10,2025-05-11
+312,Los Angeles,Los Angeles,Member,Female,Detergent,Stationery,9.87,4,2.76,42.24,4,2025-05-12
+313,Los Angeles,Los Angeles,Normal,Female,Detergent,Fruits,5.37,13,4.89,74.7,0,2025-05-13
+314,Los Angeles,Los Angeles,Normal,Female,Notebook,Fruits,11.36,3,2.39,36.47,0,2025-05-14
+315,Los Angeles,Los Angeles,Member,Female,Detergent,Fruits,1.1,5,0.39,5.89,0,2025-05-15
+316,New York,New York,Normal,Female,Shampoo,Stationery,1.09,4,0.31,4.67,0,2025-05-16
+317,Chicago,Chicago,Normal,Female,Orange Juice,Stationery,3.07,18,3.87,59.13,0,2025-05-17
+318,Chicago,Chicago,Normal,Female,Notebook,Stationery,16.36,16,18.32,280.08,0,2025-05-18
+319,Los Angeles,Los Angeles,Member,Female,Notebook,Household,15.79,8,8.84,135.16,13,2025-05-19
+320,New York,New York,Normal,Male,Notebook,Beverages,16.89,20,23.65,361.45,0,2025-05-20
+321,Los Angeles,Los Angeles,Normal,Male,Notebook,Fruits,13.46,15,14.13,216.03,0,2025-05-21
+322,Chicago,Chicago,Member,Female,Apple,Stationery,4.31,16,4.83,73.79,7,2025-05-22
+323,Los Angeles,Los Angeles,Member,Male,Orange Juice,Personal Care,19.14,5,6.7,102.4,10,2025-05-23
+324,Chicago,Chicago,Normal,Male,Notebook,Beverages,1.5,13,1.37,20.87,0,2025-05-24
+325,Los Angeles,Los Angeles,Member,Female,Detergent,Household,18.3,19,24.34,372.04,37,2025-05-25
+326,Los Angeles,Los Angeles,Normal,Male,Apple,Household,5.13,14,5.03,76.85,0,2025-05-26
+327,Los Angeles,Los Angeles,Member,Male,Shampoo,Fruits,4.25,11,3.27,50.02,5,2025-05-27
+328,Los Angeles,Los Angeles,Member,Male,Shampoo,Personal Care,18.22,5,6.38,97.48,9,2025-05-28
+329,Los Angeles,Los Angeles,Normal,Female,Orange Juice,Personal Care,1.24,10,0.87,13.27,0,2025-05-29
+330,Los Angeles,Los Angeles,Normal,Female,Detergent,Beverages,4.9,12,4.12,62.92,0,2025-05-30
+331,Los Angeles,Los Angeles,Member,Female,Notebook,Beverages,12.75,3,2.68,40.93,4,2025-05-31
+332,New York,New York,Member,Female,Notebook,Personal Care,20.53,18,25.87,395.41,39,2025-06-01
+333,New York,New York,Member,Male,Apple,Personal Care,19.18,4,5.37,82.09,8,2025-06-02
+334,Los Angeles,Los Angeles,Member,Male,Apple,Beverages,17.71,13,16.12,246.35,24,2025-06-03
+335,Chicago,Chicago,Member,Female,Apple,Stationery,18.25,14,17.89,273.39,27,2025-06-04
+336,Chicago,Chicago,Normal,Male,Shampoo,Fruits,9.5,12,7.98,121.98,0,2025-06-05
+337,New York,New York,Member,Female,Notebook,Personal Care,6.5,5,2.28,34.78,3,2025-06-06
+338,Los Angeles,Los Angeles,Member,Female,Detergent,Stationery,9.19,2,1.29,19.67,1,2025-06-07
+339,Los Angeles,Los Angeles,Member,Male,Notebook,Personal Care,9.59,20,13.43,205.23,20,2025-06-08
+340,Los Angeles,Los Angeles,Member,Female,Orange Juice,Stationery,8.85,18,11.15,170.45,17,2025-06-09
+341,New York,New York,Normal,Male,Shampoo,Stationery,7.01,12,5.89,90.01,0,2025-06-10
+342,Los Angeles,Los Angeles,Normal,Male,Shampoo,Stationery,15.87,2,2.22,33.96,0,2025-06-11
+343,Chicago,Chicago,Member,Male,Apple,Personal Care,4.59,13,4.18,63.85,6,2025-06-12
+344,New York,New York,Normal,Female,Apple,Personal Care,15.37,9,9.68,148.01,0,2025-06-13
+345,New York,New York,Normal,Female,Apple,Beverages,10.07,7,4.93,75.42,0,2025-06-14
+346,Chicago,Chicago,Normal,Male,Notebook,Stationery,5.67,10,3.97,60.67,0,2025-06-15
+347,Los Angeles,Los Angeles,Member,Female,Notebook,Beverages,18.58,9,11.71,178.93,17,2025-06-16
+348,New York,New York,Normal,Female,Shampoo,Beverages,20.85,7,10.22,156.17,0,2025-06-17
+349,Chicago,Chicago,Member,Male,Apple,Household,4.53,11,3.49,53.32,5,2025-06-18
+350,New York,New York,Member,Male,Orange Juice,Personal Care,6.89,8,3.86,58.98,5,2025-06-19
+351,Los Angeles,Los Angeles,Member,Male,Shampoo,Fruits,7.0,16,7.84,119.84,11,2025-06-20
+352,Los Angeles,Los Angeles,Member,Female,Orange Juice,Household,5.61,16,6.28,96.04,9,2025-06-21
+353,Los Angeles,Los Angeles,Member,Female,Shampoo,Household,7.64,11,5.88,89.92,8,2025-06-22
+354,Los Angeles,Los Angeles,Member,Male,Orange Juice,Fruits,17.4,9,10.96,167.56,16,2025-06-23
+355,Chicago,Chicago,Normal,Female,Orange Juice,Household,3.76,11,2.9,44.26,0,2025-06-24
+356,Chicago,Chicago,Normal,Female,Orange Juice,Fruits,3.89,2,0.54,8.32,0,2025-06-25
+357,Los Angeles,Los Angeles,Normal,Male,Detergent,Fruits,6.2,15,6.51,99.51,0,2025-06-26
+358,New York,New York,Normal,Male,Notebook,Fruits,10.36,18,13.05,199.53,0,2025-06-27
+359,Los Angeles,Los Angeles,Normal,Female,Notebook,Beverages,2.58,19,3.43,52.45,0,2025-06-28
+360,Los Angeles,Los Angeles,Normal,Female,Orange Juice,Personal Care,2.12,16,2.37,36.29,0,2025-06-29
+361,Chicago,Chicago,Normal,Female,Shampoo,Stationery,19.95,2,2.79,42.69,0,2025-01-01
+362,Chicago,Chicago,Normal,Female,Notebook,Fruits,19.12,17,22.75,347.79,0,2025-01-02
+363,New York,New York,Normal,Female,Shampoo,Household,18.71,11,14.41,220.22,0,2025-01-03
+364,New York,New York,Member,Male,Shampoo,Personal Care,15.13,20,21.18,323.78,32,2025-01-04
+365,Los Angeles,Los Angeles,Normal,Male,Orange Juice,Fruits,19.44,19,25.86,395.22,0,2025-01-05
+366,Los Angeles,Los Angeles,Member,Male,Orange Juice,Personal Care,19.9,8,11.14,170.34,17,2025-01-06
+367,Los Angeles,Los Angeles,Member,Female,Orange Juice,Beverages,12.2,6,5.12,78.32,7,2025-01-07
+368,New York,New York,Normal,Male,Shampoo,Stationery,15.99,3,3.36,51.33,0,2025-01-08
+369,New York,New York,Member,Female,Detergent,Fruits,12.78,8,7.16,109.4,10,2025-01-09
+370,Chicago,Chicago,Member,Male,Apple,Stationery,1.13,1,0.08,1.21,0,2025-01-10
+371,Los Angeles,Los Angeles,Member,Female,Apple,Fruits,4.61,10,3.23,49.33,4,2025-01-11
+372,New York,New York,Member,Female,Orange Juice,Beverages,20.0,2,2.8,42.8,4,2025-01-12
+373,New York,New York,Member,Male,Apple,Personal Care,13.7,14,13.43,205.23,20,2025-01-13
+374,Chicago,Chicago,Normal,Female,Shampoo,Fruits,7.58,20,10.61,162.21,0,2025-01-14
+375,Los Angeles,Los Angeles,Member,Female,Notebook,Stationery,1.66,1,0.12,1.78,0,2025-01-15
+376,Los Angeles,Los Angeles,Normal,Female,Notebook,Fruits,5.27,6,2.21,33.83,0,2025-01-16
+377,New York,New York,Normal,Male,Notebook,Stationery,15.04,11,11.58,177.02,0,2025-01-17
+378,New York,New York,Normal,Female,Notebook,Beverages,2.61,12,2.19,33.51,0,2025-01-18
+379,New York,New York,Normal,Female,Orange Juice,Fruits,11.3,4,3.16,48.36,0,2025-01-19
+380,Los Angeles,Los Angeles,Normal,Male,Detergent,Fruits,11.52,2,1.61,24.65,0,2025-01-20
+381,Chicago,Chicago,Member,Male,Shampoo,Stationery,8.56,17,10.19,155.71,15,2025-01-21
+382,New York,New York,Member,Female,Detergent,Personal Care,2.11,6,0.89,13.55,1,2025-01-22
+383,Chicago,Chicago,Member,Female,Shampoo,Personal Care,15.48,11,11.92,182.2,18,2025-01-23
+384,Los Angeles,Los Angeles,Member,Male,Orange Juice,Fruits,3.25,20,4.55,69.55,6,2025-01-24
+385,New York,New York,Member,Male,Notebook,Stationery,1.27,2,0.18,2.72,0,2025-01-25
+386,Los Angeles,Los Angeles,Normal,Male,Detergent,Fruits,10.94,20,15.32,234.12,0,2025-01-26
+387,New York,New York,Member,Male,Shampoo,Household,9.43,1,0.66,10.09,1,2025-01-27
+388,New York,New York,Normal,Male,Orange Juice,Household,11.75,14,11.52,176.02,0,2025-01-28
+389,Chicago,Chicago,Member,Male,Orange Juice,Household,19.88,10,13.92,212.72,21,2025-01-29
+390,Chicago,Chicago,Member,Male,Orange Juice,Fruits,12.38,10,8.67,132.47,13,2025-01-30
+391,Los Angeles,Los Angeles,Normal,Male,Apple,Beverages,16.43,5,5.75,87.9,0,2025-01-31
+392,Los Angeles,Los Angeles,Member,Male,Detergent,Household,9.35,3,1.96,30.01,3,2025-02-01
+393,New York,New York,Normal,Female,Orange Juice,Household,5.19,15,5.45,83.3,0,2025-02-02
+394,Los Angeles,Los Angeles,Member,Male,Orange Juice,Beverages,12.07,7,5.91,90.4,9,2025-02-03
+395,Chicago,Chicago,Normal,Male,Orange Juice,Stationery,13.42,8,7.52,114.88,0,2025-02-04
+396,Los Angeles,Los Angeles,Member,Male,Notebook,Beverages,3.34,13,3.04,46.46,4,2025-02-05
+397,Los Angeles,Los Angeles,Member,Female,Notebook,Fruits,2.44,4,0.68,10.44,1,2025-02-06
+398,New York,New York,Normal,Male,Apple,Fruits,19.17,2,2.68,41.02,0,2025-02-07
+399,Chicago,Chicago,Normal,Female,Shampoo,Fruits,6.47,19,8.61,131.54,0,2025-02-08
+400,New York,New York,Normal,Male,Notebook,Personal Care,16.38,12,13.76,210.32,0,2025-02-09
+401,Los Angeles,Los Angeles,Normal,Female,Detergent,Fruits,3.8,5,1.33,20.33,0,2025-02-10
+402,Chicago,Chicago,Normal,Male,Detergent,Fruits,17.6,8,9.86,150.66,0,2025-02-11
+403,New York,New York,Member,Female,Apple,Stationery,5.09,4,1.43,21.79,2,2025-02-12
+404,Los Angeles,Los Angeles,Member,Male,Detergent,Beverages,16.33,2,2.29,34.95,3,2025-02-13
+405,Chicago,Chicago,Normal,Male,Detergent,Household,3.4,13,3.09,47.29,0,2025-02-14
+406,Chicago,Chicago,Member,Male,Detergent,Household,13.3,17,15.83,241.93,24,2025-02-15
+407,Los Angeles,Los Angeles,Member,Male,Notebook,Fruits,12.39,7,6.07,92.8,9,2025-02-16
+408,Chicago,Chicago,Normal,Female,Detergent,Stationery,2.62,14,2.57,39.25,0,2025-02-17
+409,Los Angeles,Los Angeles,Normal,Female,Shampoo,Fruits,18.12,2,2.54,38.78,0,2025-02-18
+410,Los Angeles,Los Angeles,Member,Female,Detergent,Beverages,7.28,18,9.17,140.21,14,2025-02-19
+411,Los Angeles,Los Angeles,Normal,Male,Orange Juice,Fruits,17.85,11,13.74,210.09,0,2025-02-20
+412,New York,New York,Member,Male,Orange Juice,Personal Care,6.46,6,2.71,41.47,4,2025-02-21
+413,Chicago,Chicago,Member,Female,Detergent,Stationery,8.72,5,3.05,46.65,4,2025-02-22
+414,Chicago,Chicago,Normal,Female,Shampoo,Personal Care,15.92,5,5.57,85.17,0,2025-02-23
+415,New York,New York,Normal,Male,Apple,Fruits,15.52,8,8.69,132.85,0,2025-02-24
+416,Chicago,Chicago,Member,Female,Detergent,Fruits,8.26,10,5.78,88.38,8,2025-02-25
+417,New York,New York,Member,Female,Notebook,Personal Care,13.19,17,15.7,239.93,23,2025-02-26
+418,Chicago,Chicago,Member,Female,Apple,Household,1.21,20,1.69,25.89,2,2025-02-27
+419,New York,New York,Normal,Male,Detergent,Household,20.63,11,15.89,242.82,0,2025-02-28
+420,New York,New York,Normal,Male,Orange Juice,Stationery,5.13,9,3.23,49.4,0,2025-03-01
+421,Los Angeles,Los Angeles,Member,Female,Shampoo,Household,2.14,6,0.9,13.74,1,2025-03-02
+422,New York,New York,Member,Male,Shampoo,Personal Care,6.85,4,1.92,29.32,2,2025-03-03
+423,Los Angeles,Los Angeles,Normal,Male,Apple,Personal Care,12.59,17,14.98,229.01,0,2025-03-04
+424,Chicago,Chicago,Member,Female,Shampoo,Stationery,20.82,6,8.74,133.66,13,2025-03-05
+425,Los Angeles,Los Angeles,Normal,Female,Orange Juice,Fruits,7.51,18,9.46,144.64,0,2025-03-06
+426,Chicago,Chicago,Member,Male,Detergent,Stationery,4.29,20,6.01,91.81,9,2025-03-07
+427,New York,New York,Normal,Female,Apple,Personal Care,11.05,7,5.41,82.76,0,2025-03-08
+428,Chicago,Chicago,Normal,Male,Shampoo,Household,17.1,4,4.79,73.19,0,2025-03-09
+429,Chicago,Chicago,Normal,Female,Detergent,Beverages,1.72,13,1.57,23.93,0,2025-03-10
+430,Chicago,Chicago,Normal,Female,Apple,Beverages,17.88,13,16.27,248.71,0,2025-03-11
+431,Chicago,Chicago,Member,Female,Apple,Stationery,16.24,1,1.14,17.38,1,2025-03-12
+432,Chicago,Chicago,Member,Male,Notebook,Beverages,12.83,5,4.49,68.64,6,2025-03-13
+433,Los Angeles,Los Angeles,Normal,Female,Shampoo,Personal Care,20.8,15,21.84,333.84,0,2025-03-14
+434,Los Angeles,Los Angeles,Normal,Female,Orange Juice,Household,13.78,5,4.82,73.72,0,2025-03-15
+435,New York,New York,Normal,Female,Shampoo,Fruits,17.32,14,16.97,259.45,0,2025-03-16
+436,Los Angeles,Los Angeles,Member,Male,Orange Juice,Personal Care,20.09,8,11.25,171.97,17,2025-03-17
+437,Los Angeles,Los Angeles,Member,Male,Detergent,Fruits,13.92,11,10.72,163.84,16,2025-03-18
+438,New York,New York,Member,Male,Shampoo,Beverages,15.48,3,3.25,49.69,4,2025-03-19
+439,New York,New York,Normal,Female,Orange Juice,Personal Care,8.36,8,4.68,71.56,0,2025-03-20
+440,Chicago,Chicago,Member,Female,Notebook,Personal Care,6.09,3,1.28,19.55,1,2025-03-21
+441,Chicago,Chicago,Normal,Male,Shampoo,Stationery,16.82,3,3.53,53.99,0,2025-03-22
+442,Chicago,Chicago,Normal,Female,Shampoo,Household,8.01,14,7.85,119.99,0,2025-03-23
+443,Chicago,Chicago,Member,Female,Notebook,Fruits,12.01,9,7.57,115.66,11,2025-03-24
+444,Los Angeles,Los Angeles,Normal,Female,Apple,Beverages,8.19,8,4.59,70.11,0,2025-03-25
+445,Los Angeles,Los Angeles,Member,Female,Shampoo,Stationery,16.37,2,2.29,35.03,3,2025-03-26
+446,Los Angeles,Los Angeles,Normal,Male,Shampoo,Personal Care,10.61,20,14.85,227.05,0,2025-03-27
+447,New York,New York,Member,Male,Notebook,Fruits,20.91,14,20.49,313.23,31,2025-03-28
+448,New York,New York,Normal,Male,Apple,Stationery,15.32,9,9.65,147.53,0,2025-03-29
+449,Los Angeles,Los Angeles,Member,Female,Orange Juice,Beverages,8.89,12,7.47,114.15,11,2025-03-30
+450,Los Angeles,Los Angeles,Normal,Male,Apple,Stationery,19.55,15,20.53,313.78,0,2025-03-31
+451,New York,New York,Normal,Female,Notebook,Household,11.16,10,7.81,119.41,0,2025-04-01
+452,New York,New York,Normal,Male,Apple,Stationery,16.43,5,5.75,87.9,0,2025-04-02
+453,New York,New York,Normal,Male,Detergent,Household,16.77,3,3.52,53.83,0,2025-04-03
+454,Los Angeles,Los Angeles,Normal,Male,Apple,Personal Care,7.23,4,2.02,30.94,0,2025-04-04
+455,Chicago,Chicago,Member,Male,Detergent,Personal Care,9.64,16,10.8,165.04,16,2025-04-05
+456,Los Angeles,Los Angeles,Normal,Female,Orange Juice,Beverages,13.12,8,7.35,112.31,0,2025-04-06
+457,Los Angeles,Los Angeles,Member,Male,Apple,Beverages,13.3,3,2.79,42.69,4,2025-04-07
+458,New York,New York,Member,Male,Apple,Beverages,9.6,14,9.41,143.81,14,2025-04-08
+459,New York,New York,Normal,Male,Apple,Household,4.37,15,4.59,70.14,0,2025-04-09
+460,New York,New York,Normal,Female,Shampoo,Stationery,9.94,1,0.7,10.64,0,2025-04-10
+461,New York,New York,Normal,Female,Orange Juice,Household,4.38,11,3.37,51.55,0,2025-04-11
+462,Los Angeles,Los Angeles,Member,Male,Apple,Household,10.18,9,6.41,98.03,9,2025-04-12
+463,Los Angeles,Los Angeles,Normal,Female,Orange Juice,Household,12.64,1,0.88,13.52,0,2025-04-13
+464,Los Angeles,Los Angeles,Normal,Male,Apple,Beverages,12.9,11,9.93,151.83,0,2025-04-14
+465,Los Angeles,Los Angeles,Member,Female,Orange Juice,Personal Care,17.27,19,22.97,351.1,35,2025-04-15
+466,Los Angeles,Los Angeles,Member,Male,Shampoo,Beverages,18.14,6,7.62,116.46,11,2025-04-16
+467,Los Angeles,Los Angeles,Member,Female,Orange Juice,Fruits,19.87,7,9.74,148.83,14,2025-04-17
+468,Los Angeles,Los Angeles,Normal,Female,Orange Juice,Household,10.5,7,5.15,78.65,0,2025-04-18
+469,Chicago,Chicago,Normal,Male,Notebook,Fruits,15.98,6,6.71,102.59,0,2025-04-19
+470,Los Angeles,Los Angeles,Normal,Female,Notebook,Beverages,2.97,1,0.21,3.18,0,2025-04-20
+471,Chicago,Chicago,Member,Female,Notebook,Fruits,1.52,8,0.85,13.01,1,2025-04-21
+472,New York,New York,Normal,Female,Shampoo,Beverages,5.38,11,4.14,63.32,0,2025-04-22
+473,Chicago,Chicago,Member,Male,Apple,Beverages,12.89,12,10.83,165.51,16,2025-04-23
+474,Los Angeles,Los Angeles,Normal,Male,Shampoo,Stationery,4.94,5,1.73,26.43,0,2025-04-24
+475,Chicago,Chicago,Member,Male,Orange Juice,Personal Care,18.18,17,21.63,330.69,33,2025-04-25
+476,Los Angeles,Los Angeles,Normal,Female,Detergent,Stationery,7.95,1,0.56,8.51,0,2025-04-26
+477,Los Angeles,Los Angeles,Normal,Female,Notebook,Fruits,11.44,6,4.8,73.44,0,2025-04-27
+478,New York,New York,Normal,Male,Notebook,Beverages,20.39,1,1.43,21.82,0,2025-04-28
+479,Los Angeles,Los Angeles,Member,Female,Apple,Personal Care,18.9,3,3.97,60.67,6,2025-04-29
+480,Chicago,Chicago,Normal,Male,Notebook,Stationery,14.42,10,10.09,154.29,0,2025-04-30
+481,New York,New York,Member,Female,Notebook,Beverages,9.65,11,7.43,113.58,11,2025-05-01
+482,Chicago,Chicago,Normal,Male,Detergent,Beverages,12.14,17,14.45,220.83,0,2025-05-02
+483,Chicago,Chicago,Member,Male,Apple,Household,10.7,11,8.24,125.94,12,2025-05-03
+484,New York,New York,Normal,Male,Orange Juice,Household,11.66,12,9.79,149.71,0,2025-05-04
+485,Chicago,Chicago,Normal,Female,Orange Juice,Household,12.57,16,14.08,215.2,0,2025-05-05
+486,Los Angeles,Los Angeles,Normal,Female,Apple,Stationery,1.51,2,0.21,3.23,0,2025-05-06
+487,New York,New York,Normal,Male,Apple,Household,8.28,9,5.22,79.74,0,2025-05-07
+488,New York,New York,Member,Male,Detergent,Personal Care,10.1,20,14.14,216.14,21,2025-05-08
+489,Los Angeles,Los Angeles,Normal,Male,Notebook,Personal Care,6.03,5,2.11,32.26,0,2025-05-09
+490,New York,New York,Member,Female,Orange Juice,Personal Care,20.15,6,8.46,129.36,12,2025-05-10
+491,New York,New York,Normal,Male,Detergent,Beverages,1.4,10,0.98,14.98,0,2025-05-11
+492,Los Angeles,Los Angeles,Member,Male,Apple,Stationery,14.04,11,10.81,165.25,16,2025-05-12
+493,New York,New York,Normal,Male,Notebook,Stationery,17.02,20,23.83,364.23,0,2025-05-13
+494,Los Angeles,Los Angeles,Normal,Male,Apple,Household,17.96,8,10.06,153.74,0,2025-05-14
+495,New York,New York,Normal,Male,Notebook,Fruits,8.3,8,4.65,71.05,0,2025-05-15
+496,Chicago,Chicago,Member,Male,Notebook,Stationery,1.7,12,1.43,21.83,2,2025-05-16
+497,Chicago,Chicago,Member,Male,Notebook,Household,4.09,18,5.15,78.77,7,2025-05-17
+498,Los Angeles,Los Angeles,Normal,Male,Detergent,Fruits,12.82,5,4.49,68.59,0,2025-05-18
+499,Chicago,Chicago,Member,Female,Notebook,Personal Care,4.73,16,5.3,80.98,8,2025-05-19
+500,Chicago,Chicago,Normal,Female,Shampoo,Fruits,17.48,14,17.13,261.85,0,2025-05-20
+501,New York,New York,Normal,Male,Notebook,Personal Care,20.96,12,17.61,269.13,0,2025-05-21
+502,Los Angeles,Los Angeles,Member,Male,Notebook,Beverages,12.33,6,5.18,79.16,7,2025-05-22
+503,New York,New York,Normal,Female,Orange Juice,Beverages,16.24,20,22.74,347.54,0,2025-05-23
+504,Los Angeles,Los Angeles,Normal,Male,Shampoo,Personal Care,2.73,6,1.15,17.53,0,2025-05-24
+505,Chicago,Chicago,Member,Male,Detergent,Stationery,3.43,19,4.56,69.73,6,2025-05-25
+506,Chicago,Chicago,Normal,Male,Apple,Fruits,14.14,12,11.88,181.56,0,2025-05-26
+507,Los Angeles,Los Angeles,Normal,Male,Orange Juice,Fruits,5.17,15,5.43,82.98,0,2025-05-27
+508,New York,New York,Member,Female,Orange Juice,Household,14.16,4,3.96,60.6,6,2025-05-28
+509,Chicago,Chicago,Normal,Female,Orange Juice,Beverages,20.51,2,2.87,43.89,0,2025-05-29
+510,Chicago,Chicago,Member,Female,Shampoo,Fruits,15.44,20,21.62,330.42,33,2025-05-30
+511,New York,New York,Member,Female,Notebook,Personal Care,20.48,17,24.37,372.53,37,2025-05-31
+512,Chicago,Chicago,Member,Male,Shampoo,Stationery,13.15,1,0.92,14.07,1,2025-06-01
+513,Chicago,Chicago,Member,Female,Detergent,Household,1.35,1,0.09,1.44,0,2025-06-02
+514,Los Angeles,Los Angeles,Normal,Male,Detergent,Stationery,18.09,6,7.6,116.14,0,2025-06-03
+515,New York,New York,Normal,Male,Detergent,Beverages,8.75,8,4.9,74.9,0,2025-06-04
+516,Los Angeles,Los Angeles,Normal,Female,Detergent,Household,1.81,17,2.15,32.92,0,2025-06-05
+517,Chicago,Chicago,Member,Male,Shampoo,Stationery,6.19,8,3.47,52.99,5,2025-06-06
+518,New York,New York,Member,Male,Detergent,Household,10.1,1,0.71,10.81,1,2025-06-07
+519,Los Angeles,Los Angeles,Member,Female,Detergent,Household,6.51,9,4.1,62.69,6,2025-06-08
+520,Chicago,Chicago,Member,Male,Apple,Household,1.88,3,0.39,6.03,0,2025-06-09
+521,Chicago,Chicago,Normal,Female,Shampoo,Stationery,13.79,3,2.9,44.27,0,2025-06-10
+522,Chicago,Chicago,Normal,Female,Notebook,Beverages,20.23,18,25.49,389.63,0,2025-06-11
+523,Chicago,Chicago,Normal,Male,Apple,Household,17.8,2,2.49,38.09,0,2025-06-12
+524,Los Angeles,Los Angeles,Member,Male,Detergent,Household,7.53,15,7.91,120.86,12,2025-06-13
+525,Los Angeles,Los Angeles,Normal,Female,Shampoo,Fruits,9.51,12,7.99,122.11,0,2025-06-14
+526,Chicago,Chicago,Normal,Female,Detergent,Household,1.68,7,0.82,12.58,0,2025-06-15
+527,New York,New York,Member,Male,Apple,Personal Care,12.2,16,13.66,208.86,20,2025-06-16
+528,Los Angeles,Los Angeles,Member,Female,Detergent,Stationery,6.04,13,5.5,84.02,8,2025-06-17
+529,Los Angeles,Los Angeles,Normal,Female,Shampoo,Beverages,1.63,13,1.48,22.67,0,2025-06-18
+530,Chicago,Chicago,Normal,Female,Detergent,Fruits,10.77,18,13.57,207.43,0,2025-06-19
+531,Los Angeles,Los Angeles,Normal,Male,Detergent,Household,9.67,18,12.18,186.24,0,2025-06-20
+532,New York,New York,Normal,Male,Shampoo,Stationery,17.53,8,9.82,150.06,0,2025-06-21
+533,New York,New York,Member,Male,Orange Juice,Personal Care,4.96,11,3.82,58.38,5,2025-06-22
+534,New York,New York,Normal,Male,Detergent,Fruits,7.84,3,1.65,25.17,0,2025-06-23
+535,Chicago,Chicago,Member,Male,Notebook,Fruits,17.4,8,9.74,148.94,14,2025-06-24
+536,Chicago,Chicago,Normal,Male,Apple,Stationery,12.52,5,4.38,66.98,0,2025-06-25
+537,New York,New York,Normal,Male,Orange Juice,Beverages,13.59,11,10.46,159.95,0,2025-06-26
+538,New York,New York,Member,Female,Notebook,Stationery,10.77,14,10.55,161.33,16,2025-06-27
+539,Chicago,Chicago,Normal,Male,Notebook,Stationery,16.63,19,22.12,338.09,0,2025-06-28
+540,New York,New York,Normal,Male,Shampoo,Fruits,19.92,5,6.97,106.57,0,2025-06-29
+541,Chicago,Chicago,Normal,Female,Orange Juice,Personal Care,14.49,2,2.03,31.01,0,2025-01-01
+542,New York,New York,Member,Male,Orange Juice,Household,9.7,18,12.22,186.82,18,2025-01-02
+543,New York,New York,Member,Male,Apple,Stationery,5.16,20,7.22,110.42,11,2025-01-03
+544,Chicago,Chicago,Normal,Male,Apple,Household,15.69,13,14.28,218.25,0,2025-01-04
+545,Los Angeles,Los Angeles,Normal,Male,Notebook,Household,14.05,2,1.97,30.07,0,2025-01-05
+546,Chicago,Chicago,Normal,Female,Shampoo,Personal Care,15.5,2,2.17,33.17,0,2025-01-06
+547,Chicago,Chicago,Normal,Male,Orange Juice,Household,11.2,14,10.98,167.78,0,2025-01-07
+548,New York,New York,Member,Male,Detergent,Beverages,4.42,18,5.57,85.13,8,2025-01-08
+549,New York,New York,Member,Female,Orange Juice,Household,14.48,7,7.1,108.46,10,2025-01-09
+550,Los Angeles,Los Angeles,Member,Female,Shampoo,Beverages,3.05,17,3.63,55.48,5,2025-01-10
+551,Chicago,Chicago,Normal,Female,Apple,Fruits,9.83,13,8.95,136.74,0,2025-01-11
+552,Chicago,Chicago,Member,Female,Notebook,Household,9.0,1,0.63,9.63,0,2025-01-12
+553,New York,New York,Normal,Male,Notebook,Beverages,4.19,17,4.99,76.22,0,2025-01-13
+554,New York,New York,Normal,Male,Apple,Household,20.87,1,1.46,22.33,0,2025-01-14
+555,New York,New York,Normal,Female,Detergent,Personal Care,13.19,16,14.77,225.81,0,2025-01-15
+556,Chicago,Chicago,Member,Male,Apple,Fruits,11.38,7,5.58,85.24,8,2025-01-16
+557,Chicago,Chicago,Normal,Female,Notebook,Beverages,2.77,19,3.68,56.31,0,2025-01-17
+558,Los Angeles,Los Angeles,Normal,Female,Detergent,Fruits,15.56,1,1.09,16.65,0,2025-01-18
+559,New York,New York,Normal,Female,Apple,Personal Care,5.88,19,7.82,119.54,0,2025-01-19
+560,New York,New York,Normal,Male,Notebook,Beverages,19.03,13,17.32,264.71,0,2025-01-20
+561,New York,New York,Member,Female,Apple,Personal Care,16.48,13,15.0,229.24,22,2025-01-21
+562,Los Angeles,Los Angeles,Member,Female,Shampoo,Fruits,3.19,5,1.12,17.07,1,2025-01-22
+563,Los Angeles,Los Angeles,Member,Female,Notebook,Household,18.26,2,2.56,39.08,3,2025-01-23
+564,Chicago,Chicago,Normal,Male,Shampoo,Beverages,8.73,20,12.22,186.82,0,2025-01-24
+565,New York,New York,Normal,Male,Notebook,Beverages,9.95,12,8.36,127.76,0,2025-01-25
+566,Chicago,Chicago,Member,Male,Orange Juice,Fruits,5.63,18,7.09,108.43,10,2025-01-26
+567,Chicago,Chicago,Normal,Male,Shampoo,Stationery,17.19,8,9.63,147.15,0,2025-01-27
+568,Los Angeles,Los Angeles,Normal,Male,Apple,Household,15.0,12,12.6,192.6,0,2025-01-28
+569,Los Angeles,Los Angeles,Normal,Female,Orange Juice,Personal Care,4.28,17,5.09,77.85,0,2025-01-29
+570,Los Angeles,Los Angeles,Member,Female,Notebook,Personal Care,4.47,14,4.38,66.96,6,2025-01-30
+571,Los Angeles,Los Angeles,Member,Male,Apple,Household,17.49,1,1.22,18.71,1,2025-01-31
+572,Los Angeles,Los Angeles,Normal,Female,Shampoo,Personal Care,11.72,7,5.74,87.78,0,2025-02-01
+573,New York,New York,Member,Female,Shampoo,Beverages,17.25,9,10.87,166.12,16,2025-02-02
+574,Los Angeles,Los Angeles,Normal,Female,Notebook,Beverages,11.99,19,15.95,243.76,0,2025-02-03
+575,Los Angeles,Los Angeles,Normal,Male,Shampoo,Household,8.29,10,5.8,88.7,0,2025-02-04
+576,Los Angeles,Los Angeles,Normal,Male,Orange Juice,Stationery,6.18,3,1.3,19.84,0,2025-02-05
+577,Chicago,Chicago,Member,Male,Notebook,Beverages,17.72,7,8.68,132.72,13,2025-02-06
+578,Chicago,Chicago,Member,Male,Orange Juice,Personal Care,12.14,14,11.9,181.86,18,2025-02-07
+579,Los Angeles,Los Angeles,Normal,Female,Shampoo,Personal Care,9.73,15,10.22,156.17,0,2025-02-08
+580,Chicago,Chicago,Member,Male,Notebook,Personal Care,19.67,5,6.88,105.23,10,2025-02-09
+581,Los Angeles,Los Angeles,Normal,Female,Orange Juice,Household,1.35,17,1.61,24.56,0,2025-02-10
+582,Los Angeles,Los Angeles,Normal,Male,Orange Juice,Household,17.95,5,6.28,96.03,0,2025-02-11
+583,Los Angeles,Los Angeles,Member,Male,Apple,Beverages,5.98,17,7.12,108.78,10,2025-02-12
+584,Los Angeles,Los Angeles,Member,Male,Notebook,Household,13.82,20,19.35,295.75,29,2025-02-13
+585,Los Angeles,Los Angeles,Normal,Male,Shampoo,Fruits,10.67,14,10.46,159.84,0,2025-02-14
+586,Chicago,Chicago,Normal,Male,Detergent,Personal Care,7.58,12,6.37,97.33,0,2025-02-15
+587,New York,New York,Normal,Female,Apple,Personal Care,19.99,7,9.8,149.73,0,2025-02-16
+588,Los Angeles,Los Angeles,Normal,Male,Orange Juice,Stationery,12.74,7,6.24,95.42,0,2025-02-17
+589,New York,New York,Member,Male,Apple,Fruits,5.61,9,3.53,54.02,5,2025-02-18
+590,Los Angeles,Los Angeles,Normal,Male,Shampoo,Fruits,2.7,1,0.19,2.89,0,2025-02-19
+591,Chicago,Chicago,Normal,Male,Shampoo,Fruits,11.33,8,6.34,96.98,0,2025-02-20
+592,Los Angeles,Los Angeles,Normal,Male,Notebook,Beverages,18.91,14,18.53,283.27,0,2025-02-21
+593,Chicago,Chicago,Member,Female,Apple,Household,1.38,18,1.74,26.58,2,2025-02-22
+594,Los Angeles,Los Angeles,Normal,Female,Detergent,Personal Care,18.28,19,24.31,371.63,0,2025-02-23
+595,New York,New York,Member,Female,Apple,Stationery,1.89,10,1.32,20.22,2,2025-02-24
+596,New York,New York,Normal,Male,Notebook,Household,6.36,7,3.12,47.64,0,2025-02-25
+597,Chicago,Chicago,Member,Female,Detergent,Personal Care,13.96,16,15.64,239.0,23,2025-02-26
+598,Los Angeles,Los Angeles,Normal,Male,Orange Juice,Personal Care,10.84,18,13.66,208.78,0,2025-02-27
+599,Los Angeles,Los Angeles,Normal,Female,Orange Juice,Personal Care,9.78,1,0.68,10.46,0,2025-02-28
+600,Chicago,Chicago,Member,Male,Apple,Stationery,3.33,11,2.56,39.19,3,2025-03-01
+601,Chicago,Chicago,Normal,Female,Apple,Personal Care,8.67,10,6.07,92.77,0,2025-03-02
+602,Los Angeles,Los Angeles,Member,Male,Detergent,Beverages,11.73,19,15.6,238.47,23,2025-03-03
+603,New York,New York,Normal,Male,Detergent,Household,7.96,12,6.69,102.21,0,2025-03-04
+604,Chicago,Chicago,Normal,Male,Apple,Beverages,5.87,7,2.88,43.97,0,2025-03-05
+605,New York,New York,Normal,Female,Notebook,Fruits,4.15,1,0.29,4.44,0,2025-03-06
+606,Chicago,Chicago,Member,Male,Shampoo,Stationery,10.22,5,3.58,54.68,5,2025-03-07
+607,Los Angeles,Los Angeles,Normal,Male,Orange Juice,Household,17.42,3,3.66,55.92,0,2025-03-08
+608,Los Angeles,Los Angeles,Normal,Male,Apple,Personal Care,7.44,12,6.25,95.53,0,2025-03-09
+609,Chicago,Chicago,Member,Male,Shampoo,Household,15.53,8,8.7,132.94,13,2025-03-10
+610,Chicago,Chicago,Normal,Female,Apple,Personal Care,2.68,5,0.94,14.34,0,2025-03-11
+611,New York,New York,Normal,Male,Apple,Beverages,15.57,2,2.18,33.32,0,2025-03-12
+612,New York,New York,Member,Male,Detergent,Stationery,8.39,1,0.59,8.98,0,2025-03-13
+613,Los Angeles,Los Angeles,Normal,Male,Apple,Beverages,19.28,2,2.7,41.26,0,2025-03-14
+614,New York,New York,Normal,Female,Orange Juice,Stationery,12.9,6,5.42,82.82,0,2025-03-15
+615,New York,New York,Normal,Male,Orange Juice,Fruits,6.9,6,2.9,44.3,0,2025-03-16
+616,Los Angeles,Los Angeles,Normal,Female,Apple,Household,12.94,3,2.72,41.54,0,2025-03-17
+617,Chicago,Chicago,Normal,Male,Notebook,Stationery,8.76,4,2.45,37.49,0,2025-03-18
+618,New York,New York,Normal,Female,Detergent,Fruits,3.64,8,2.04,31.16,0,2025-03-19
+619,Chicago,Chicago,Member,Female,Shampoo,Household,8.39,15,8.81,134.66,13,2025-03-20
+620,Los Angeles,Los Angeles,Member,Female,Apple,Stationery,3.07,9,1.93,29.56,2,2025-03-21
+621,Los Angeles,Los Angeles,Member,Female,Notebook,Stationery,4.57,17,5.44,83.13,8,2025-03-22
+622,New York,New York,Normal,Female,Detergent,Fruits,19.77,20,27.68,423.08,0,2025-03-23
+623,Los Angeles,Los Angeles,Member,Male,Orange Juice,Stationery,2.39,7,1.17,17.9,1,2025-03-24
+624,Chicago,Chicago,Member,Female,Notebook,Personal Care,17.73,19,23.58,360.45,36,2025-03-25
+625,New York,New York,Member,Male,Detergent,Beverages,11.96,3,2.51,38.39,3,2025-03-26
+626,New York,New York,Member,Male,Detergent,Personal Care,12.34,8,6.91,105.63,10,2025-03-27
+627,Chicago,Chicago,Normal,Female,Orange Juice,Stationery,6.2,3,1.3,19.9,0,2025-03-28
+628,Los Angeles,Los Angeles,Normal,Male,Shampoo,Household,15.18,5,5.31,81.21,0,2025-03-29
+629,Los Angeles,Los Angeles,Normal,Male,Notebook,Personal Care,14.15,19,18.82,287.67,0,2025-03-30
+630,Los Angeles,Los Angeles,Normal,Male,Notebook,Stationery,7.15,14,7.01,107.11,0,2025-03-31
+631,New York,New York,Normal,Female,Shampoo,Fruits,14.7,14,14.41,220.21,0,2025-04-01
+632,Chicago,Chicago,Normal,Male,Orange Juice,Household,20.6,17,24.51,374.71,0,2025-04-02
+633,Los Angeles,Los Angeles,Normal,Male,Shampoo,Stationery,13.71,2,1.92,29.34,0,2025-04-03
+634,New York,New York,Normal,Female,Apple,Household,17.17,1,1.2,18.37,0,2025-04-04
+635,New York,New York,Normal,Female,Detergent,Beverages,9.38,5,3.28,50.18,0,2025-04-05
+636,Los Angeles,Los Angeles,Normal,Female,Apple,Beverages,4.34,1,0.3,4.64,0,2025-04-06
+637,Chicago,Chicago,Normal,Male,Orange Juice,Personal Care,11.71,2,1.64,25.06,0,2025-04-07
+638,Chicago,Chicago,Member,Male,Orange Juice,Fruits,8.8,15,9.24,141.24,14,2025-04-08
+639,Chicago,Chicago,Member,Male,Orange Juice,Fruits,14.09,20,19.73,301.53,30,2025-04-09
+640,Los Angeles,Los Angeles,Normal,Male,Orange Juice,Fruits,14.33,20,20.06,306.66,0,2025-04-10
+641,Chicago,Chicago,Normal,Female,Notebook,Household,4.88,2,0.68,10.44,0,2025-04-11
+642,New York,New York,Normal,Female,Detergent,Fruits,17.25,6,7.25,110.75,0,2025-04-12
+643,Chicago,Chicago,Member,Female,Orange Juice,Stationery,5.83,1,0.41,6.24,0,2025-04-13
+644,New York,New York,Normal,Male,Shampoo,Fruits,13.2,16,14.78,225.98,0,2025-04-14
+645,New York,New York,Member,Male,Shampoo,Household,1.26,2,0.18,2.7,0,2025-04-15
+646,Los Angeles,Los Angeles,Normal,Male,Detergent,Household,19.44,14,19.05,291.21,0,2025-04-16
+647,Chicago,Chicago,Member,Male,Orange Juice,Beverages,3.4,14,3.33,50.93,5,2025-04-17
+648,Los Angeles,Los Angeles,Member,Male,Orange Juice,Personal Care,6.4,18,8.06,123.26,12,2025-04-18
+649,Chicago,Chicago,Normal,Female,Detergent,Stationery,7.8,18,9.83,150.23,0,2025-04-19
+650,Chicago,Chicago,Normal,Male,Notebook,Beverages,2.31,9,1.46,22.25,0,2025-04-20
+651,Chicago,Chicago,Normal,Female,Shampoo,Fruits,4.52,5,1.58,24.18,0,2025-04-21
+652,Chicago,Chicago,Member,Female,Orange Juice,Fruits,13.53,18,17.05,260.59,26,2025-04-22
+653,New York,New York,Normal,Male,Detergent,Beverages,19.71,16,22.08,337.44,0,2025-04-23
+654,Chicago,Chicago,Member,Female,Detergent,Fruits,10.14,14,9.94,151.9,15,2025-04-24
+655,Los Angeles,Los Angeles,Member,Male,Shampoo,Household,11.2,4,3.14,47.94,4,2025-04-25
+656,Chicago,Chicago,Member,Female,Apple,Household,2.01,3,0.42,6.45,0,2025-04-26
+657,New York,New York,Member,Male,Detergent,Stationery,4.14,2,0.58,8.86,0,2025-04-27
+658,Chicago,Chicago,Normal,Female,Orange Juice,Household,16.47,16,18.45,281.97,0,2025-04-28
+659,Chicago,Chicago,Member,Male,Orange Juice,Beverages,12.7,4,3.56,54.36,5,2025-04-29
+660,Los Angeles,Los Angeles,Member,Female,Notebook,Fruits,10.72,18,13.51,206.47,20,2025-04-30
+661,New York,New York,Member,Female,Shampoo,Personal Care,15.29,3,3.21,49.08,4,2025-05-01
+662,New York,New York,Member,Male,Notebook,Personal Care,12.5,14,12.25,187.25,18,2025-05-02
+663,Los Angeles,Los Angeles,Member,Male,Orange Juice,Beverages,18.95,18,23.88,364.98,36,2025-05-03
+664,New York,New York,Normal,Male,Shampoo,Beverages,13.71,14,13.44,205.38,0,2025-05-04
+665,Los Angeles,Los Angeles,Normal,Male,Shampoo,Beverages,8.36,2,1.17,17.89,0,2025-05-05
+666,Chicago,Chicago,Normal,Female,Detergent,Personal Care,14.62,1,1.02,15.64,0,2025-05-06
+667,Los Angeles,Los Angeles,Normal,Female,Detergent,Fruits,13.93,16,15.6,238.48,0,2025-05-07
+668,New York,New York,Member,Male,Detergent,Fruits,18.0,13,16.38,250.38,25,2025-05-08
+669,Chicago,Chicago,Member,Female,Apple,Personal Care,14.55,4,4.07,62.27,6,2025-05-09
+670,New York,New York,Member,Female,Shampoo,Fruits,17.4,8,9.74,148.94,14,2025-05-10
+671,New York,New York,Member,Male,Orange Juice,Stationery,2.47,4,0.69,10.57,1,2025-05-11
+672,Los Angeles,Los Angeles,Member,Male,Notebook,Stationery,7.03,16,7.87,120.35,12,2025-05-12
+673,Chicago,Chicago,Member,Male,Shampoo,Stationery,17.59,1,1.23,18.82,1,2025-05-13
+674,Chicago,Chicago,Member,Male,Orange Juice,Stationery,17.6,5,6.16,94.16,9,2025-05-14
+675,Los Angeles,Los Angeles,Normal,Male,Orange Juice,Personal Care,10.42,3,2.19,33.45,0,2025-05-15
+676,Los Angeles,Los Angeles,Normal,Male,Detergent,Stationery,10.82,9,6.82,104.2,0,2025-05-16
+677,New York,New York,Member,Male,Shampoo,Stationery,16.49,4,4.62,70.58,7,2025-05-17
+678,New York,New York,Member,Male,Orange Juice,Fruits,4.58,7,2.24,34.3,3,2025-05-18
+679,Los Angeles,Los Angeles,Normal,Male,Apple,Personal Care,4.52,11,3.48,53.2,0,2025-05-19
+680,Chicago,Chicago,Member,Female,Detergent,Beverages,15.75,18,19.85,303.35,30,2025-05-20
+681,Chicago,Chicago,Normal,Male,Detergent,Stationery,14.31,7,7.01,107.18,0,2025-05-21
+682,Chicago,Chicago,Member,Female,Apple,Fruits,19.77,8,11.07,169.23,16,2025-05-22
+683,New York,New York,Member,Male,Detergent,Beverages,14.37,13,13.08,199.89,19,2025-05-23
+684,New York,New York,Member,Female,Shampoo,Household,13.05,14,12.79,195.49,19,2025-05-24
+685,New York,New York,Normal,Female,Apple,Fruits,3.48,3,0.73,11.17,0,2025-05-25
+686,Chicago,Chicago,Normal,Female,Notebook,Fruits,4.33,2,0.61,9.27,0,2025-05-26
+687,Chicago,Chicago,Member,Male,Orange Juice,Beverages,4.09,6,1.72,26.26,2,2025-05-27
+688,New York,New York,Member,Female,Detergent,Beverages,4.58,5,1.6,24.5,2,2025-05-28
+689,New York,New York,Normal,Female,Orange Juice,Household,2.37,3,0.5,7.61,0,2025-05-29
+690,New York,New York,Member,Female,Notebook,Stationery,4.14,15,4.35,66.45,6,2025-05-30
+691,New York,New York,Normal,Male,Shampoo,Stationery,7.73,15,8.12,124.07,0,2025-05-31
+692,Los Angeles,Los Angeles,Member,Male,Apple,Beverages,4.93,5,1.73,26.38,2,2025-06-01
+693,Los Angeles,Los Angeles,Normal,Male,Apple,Beverages,5.47,6,2.3,35.12,0,2025-06-02
+694,New York,New York,Member,Female,Detergent,Household,6.05,6,2.54,38.84,3,2025-06-03
+695,New York,New York,Normal,Female,Notebook,Stationery,6.56,11,5.05,77.21,0,2025-06-04
+696,Chicago,Chicago,Member,Female,Detergent,Stationery,7.46,19,9.92,151.66,15,2025-06-05
+697,Los Angeles,Los Angeles,Normal,Female,Detergent,Household,19.03,14,18.65,285.07,0,2025-06-06
+698,Chicago,Chicago,Normal,Female,Apple,Fruits,18.52,2,2.59,39.63,0,2025-06-07
+699,Los Angeles,Los Angeles,Normal,Female,Orange Juice,Household,13.05,1,0.91,13.96,0,2025-06-08
+700,Chicago,Chicago,Normal,Male,Shampoo,Beverages,12.81,20,17.93,274.13,0,2025-06-09
+701,Chicago,Chicago,Normal,Female,Apple,Beverages,14.78,16,16.55,253.03,0,2025-06-10
+702,New York,New York,Member,Male,Detergent,Fruits,18.54,13,16.87,257.89,25,2025-06-11
+703,New York,New York,Normal,Female,Notebook,Beverages,15.61,19,20.76,317.35,0,2025-06-12
+704,New York,New York,Member,Male,Shampoo,Stationery,17.93,11,13.81,211.04,21,2025-06-13
+705,Los Angeles,Los Angeles,Normal,Female,Detergent,Stationery,7.6,17,9.04,138.24,0,2025-06-14
+706,Chicago,Chicago,Member,Male,Apple,Personal Care,19.82,10,13.87,212.07,21,2025-06-15
+707,Chicago,Chicago,Member,Female,Orange Juice,Personal Care,10.89,18,13.72,209.74,20,2025-06-16
+708,Chicago,Chicago,Normal,Female,Orange Juice,Stationery,8.75,5,3.06,46.81,0,2025-06-17
+709,Los Angeles,Los Angeles,Member,Male,Notebook,Stationery,1.42,2,0.2,3.04,0,2025-06-18
+710,Chicago,Chicago,Normal,Male,Orange Juice,Fruits,14.45,18,18.21,278.31,0,2025-06-19
+711,Los Angeles,Los Angeles,Member,Female,Orange Juice,Personal Care,3.52,7,1.72,26.36,2,2025-06-20
+712,Chicago,Chicago,Member,Male,Shampoo,Stationery,17.93,11,13.81,211.04,21,2025-06-21
+713,Los Angeles,Los Angeles,Member,Female,Shampoo,Personal Care,6.21,3,1.3,19.93,1,2025-06-22
+714,New York,New York,Member,Male,Orange Juice,Personal Care,13.68,3,2.87,43.91,4,2025-06-23
+715,Chicago,Chicago,Normal,Male,Orange Juice,Household,11.7,6,4.91,75.11,0,2025-06-24
+716,New York,New York,Member,Female,Shampoo,Personal Care,18.27,16,20.46,312.78,31,2025-06-25
+717,Chicago,Chicago,Member,Male,Apple,Fruits,2.47,16,2.77,42.29,4,2025-06-26
+718,New York,New York,Normal,Male,Shampoo,Fruits,2.81,20,3.93,60.13,0,2025-06-27
+719,Chicago,Chicago,Normal,Female,Orange Juice,Fruits,5.87,19,7.81,119.34,0,2025-06-28
+720,Chicago,Chicago,Member,Female,Apple,Household,1.09,20,1.53,23.33,2,2025-06-29
+721,Chicago,Chicago,Member,Female,Detergent,Stationery,20.04,15,21.04,321.64,32,2025-01-01
+722,New York,New York,Member,Female,Shampoo,Fruits,17.96,1,1.26,19.22,1,2025-01-02
+723,Los Angeles,Los Angeles,Member,Male,Shampoo,Beverages,14.97,13,13.62,208.23,20,2025-01-03
+724,Chicago,Chicago,Member,Male,Shampoo,Stationery,15.53,12,13.05,199.41,19,2025-01-04
+725,New York,New York,Member,Female,Detergent,Household,7.83,15,8.22,125.67,12,2025-01-05
+726,Los Angeles,Los Angeles,Member,Male,Apple,Fruits,10.11,1,0.71,10.82,1,2025-01-06
+727,New York,New York,Member,Male,Apple,Personal Care,6.0,16,6.72,102.72,10,2025-01-07
+728,New York,New York,Member,Female,Notebook,Personal Care,9.32,20,13.05,199.45,19,2025-01-08
+729,Chicago,Chicago,Normal,Male,Detergent,Stationery,2.93,14,2.87,43.89,0,2025-01-09
+730,Chicago,Chicago,Member,Male,Detergent,Personal Care,12.67,11,9.76,149.13,14,2025-01-10
+731,Chicago,Chicago,Member,Male,Notebook,Fruits,7.74,10,5.42,82.82,8,2025-01-11
+732,Chicago,Chicago,Normal,Female,Detergent,Personal Care,2.4,17,2.86,43.66,0,2025-01-12
+733,Los Angeles,Los Angeles,Normal,Male,Detergent,Personal Care,5.43,16,6.08,92.96,0,2025-01-13
+734,Los Angeles,Los Angeles,Member,Male,Notebook,Fruits,14.92,17,17.75,271.39,27,2025-01-14
+735,New York,New York,Member,Female,Detergent,Beverages,12.85,2,1.8,27.5,2,2025-01-15
+736,New York,New York,Member,Male,Shampoo,Household,16.19,9,10.2,155.91,15,2025-01-16
+737,New York,New York,Member,Female,Apple,Stationery,8.47,15,8.89,135.94,13,2025-01-17
+738,Los Angeles,Los Angeles,Member,Female,Notebook,Fruits,7.94,8,4.45,67.97,6,2025-01-18
+739,Chicago,Chicago,Normal,Male,Notebook,Personal Care,18.04,18,22.73,347.45,0,2025-01-19
+740,New York,New York,Normal,Female,Apple,Stationery,7.15,10,5.01,76.51,0,2025-01-20
+741,New York,New York,Member,Male,Notebook,Household,9.92,3,2.08,31.84,3,2025-01-21
+742,Chicago,Chicago,Normal,Male,Shampoo,Fruits,9.37,9,5.9,90.23,0,2025-01-22
+743,Chicago,Chicago,Member,Female,Notebook,Personal Care,9.06,16,10.15,155.11,15,2025-01-23
+744,Los Angeles,Los Angeles,Normal,Male,Detergent,Beverages,16.32,1,1.14,17.46,0,2025-01-24
+745,Chicago,Chicago,Member,Male,Orange Juice,Stationery,20.23,14,19.83,303.05,30,2025-01-25
+746,Chicago,Chicago,Member,Female,Shampoo,Household,9.25,14,9.07,138.57,13,2025-01-26
+747,New York,New York,Normal,Male,Orange Juice,Household,16.84,1,1.18,18.02,0,2025-01-27
+748,Los Angeles,Los Angeles,Normal,Female,Notebook,Personal Care,6.61,4,1.85,28.29,0,2025-01-28
+749,Chicago,Chicago,Normal,Female,Notebook,Beverages,13.59,12,11.42,174.5,0,2025-01-29
+750,New York,New York,Member,Male,Detergent,Stationery,18.32,14,17.95,274.43,27,2025-01-30
+751,Chicago,Chicago,Normal,Male,Apple,Household,12.14,20,17.0,259.8,0,2025-01-31
+752,Chicago,Chicago,Member,Female,Detergent,Beverages,7.98,3,1.68,25.62,2,2025-02-01
+753,Los Angeles,Los Angeles,Member,Male,Orange Juice,Personal Care,7.87,3,1.65,25.26,2,2025-02-02
+754,Chicago,Chicago,Normal,Male,Orange Juice,Household,16.89,17,20.1,307.23,0,2025-02-03
+755,Chicago,Chicago,Member,Male,Detergent,Beverages,3.09,2,0.43,6.61,0,2025-02-04
+756,Los Angeles,Los Angeles,Member,Female,Orange Juice,Household,2.2,20,3.08,47.08,4,2025-02-05
+757,Chicago,Chicago,Member,Female,Apple,Stationery,2.73,10,1.91,29.21,2,2025-02-06
+758,Los Angeles,Los Angeles,Member,Male,Shampoo,Fruits,16.62,12,13.96,213.4,21,2025-02-07
+759,Los Angeles,Los Angeles,Normal,Male,Orange Juice,Beverages,16.49,2,2.31,35.29,0,2025-02-08
+760,Chicago,Chicago,Normal,Male,Orange Juice,Personal Care,19.92,6,8.37,127.89,0,2025-02-09
+761,Los Angeles,Los Angeles,Normal,Female,Apple,Stationery,20.74,19,27.58,421.64,0,2025-02-10
+762,Los Angeles,Los Angeles,Member,Male,Orange Juice,Household,13.25,6,5.57,85.07,8,2025-02-11
+763,New York,New York,Member,Female,Detergent,Fruits,10.46,18,13.18,201.46,20,2025-02-12
+764,Los Angeles,Los Angeles,Normal,Female,Orange Juice,Fruits,2.84,18,3.58,54.7,0,2025-02-13
+765,New York,New York,Normal,Male,Detergent,Personal Care,9.04,17,10.76,164.44,0,2025-02-14
+766,Chicago,Chicago,Member,Female,Shampoo,Personal Care,9.84,4,2.76,42.12,4,2025-02-15
+767,Chicago,Chicago,Member,Male,Apple,Household,10.21,8,5.72,87.4,8,2025-02-16
+768,Los Angeles,Los Angeles,Normal,Female,Orange Juice,Stationery,10.46,5,3.66,55.96,0,2025-02-17
+769,New York,New York,Normal,Male,Apple,Personal Care,15.93,11,12.27,187.5,0,2025-02-18
+770,New York,New York,Normal,Female,Notebook,Beverages,10.11,14,9.91,151.45,0,2025-02-19
+771,Chicago,Chicago,Normal,Male,Shampoo,Stationery,10.97,18,13.82,211.28,0,2025-02-20
+772,Los Angeles,Los Angeles,Member,Male,Apple,Stationery,11.4,1,0.8,12.2,1,2025-02-21
+773,New York,New York,Normal,Female,Orange Juice,Stationery,14.63,11,11.27,172.2,0,2025-02-22
+774,New York,New York,Normal,Female,Apple,Stationery,16.48,5,5.77,88.17,0,2025-02-23
+775,Chicago,Chicago,Normal,Female,Detergent,Beverages,1.72,15,1.81,27.61,0,2025-02-24
+776,Chicago,Chicago,Member,Male,Shampoo,Household,17.12,15,17.98,274.78,27,2025-02-25
+777,Los Angeles,Los Angeles,Member,Female,Detergent,Stationery,8.81,4,2.47,37.71,3,2025-02-26
+778,Los Angeles,Los Angeles,Member,Male,Orange Juice,Personal Care,3.11,4,0.87,13.31,1,2025-02-27
+779,Los Angeles,Los Angeles,Member,Female,Orange Juice,Beverages,10.57,20,14.8,226.2,22,2025-02-28
+780,Chicago,Chicago,Normal,Male,Shampoo,Stationery,6.64,7,3.25,49.73,0,2025-03-01
+781,Chicago,Chicago,Normal,Male,Shampoo,Stationery,17.37,20,24.32,371.72,0,2025-03-02
+782,New York,New York,Member,Female,Detergent,Beverages,4.94,7,2.42,37.0,3,2025-03-03
+783,Chicago,Chicago,Member,Female,Detergent,Household,4.62,3,0.97,14.83,1,2025-03-04
+784,Los Angeles,Los Angeles,Normal,Male,Notebook,Stationery,10.23,10,7.16,109.46,0,2025-03-05
+785,New York,New York,Normal,Female,Apple,Household,9.94,6,4.17,63.81,0,2025-03-06
+786,Chicago,Chicago,Normal,Male,Shampoo,Household,5.14,17,6.12,93.5,0,2025-03-07
+787,Chicago,Chicago,Normal,Male,Shampoo,Personal Care,17.65,12,14.83,226.63,0,2025-03-08
+788,Chicago,Chicago,Normal,Female,Detergent,Personal Care,10.01,20,14.01,214.21,0,2025-03-09
+789,Los Angeles,Los Angeles,Member,Female,Notebook,Household,1.82,18,2.29,35.05,3,2025-03-10
+790,New York,New York,Normal,Female,Shampoo,Personal Care,16.31,7,7.99,122.16,0,2025-03-11
+791,Los Angeles,Los Angeles,Member,Male,Detergent,Beverages,11.87,2,1.66,25.4,2,2025-03-12
+792,New York,New York,Normal,Male,Detergent,Beverages,2.97,10,2.08,31.78,0,2025-03-13
+793,Los Angeles,Los Angeles,Member,Male,Notebook,Household,5.86,18,7.38,112.86,11,2025-03-14
+794,New York,New York,Normal,Female,Notebook,Personal Care,2.28,16,2.55,39.03,0,2025-03-15
+795,Los Angeles,Los Angeles,Member,Female,Apple,Beverages,5.17,2,0.72,11.06,1,2025-03-16
+796,Chicago,Chicago,Member,Male,Shampoo,Fruits,8.75,6,3.68,56.18,5,2025-03-17
+797,New York,New York,Member,Male,Orange Juice,Personal Care,1.87,18,2.36,36.02,3,2025-03-18
+798,New York,New York,Member,Female,Orange Juice,Fruits,12.01,11,9.25,141.36,14,2025-03-19
+799,New York,New York,Normal,Female,Notebook,Stationery,4.05,3,0.85,13.0,0,2025-03-20
+800,Chicago,Chicago,Member,Female,Detergent,Personal Care,6.27,20,8.78,134.18,13,2025-03-21
+801,Los Angeles,Los Angeles,Member,Female,Apple,Beverages,9.58,14,9.39,143.51,14,2025-03-22
+802,Chicago,Chicago,Normal,Male,Detergent,Personal Care,6.88,4,1.93,29.45,0,2025-03-23
+803,Chicago,Chicago,Member,Female,Shampoo,Fruits,1.1,16,1.23,18.83,1,2025-03-24
+804,New York,New York,Member,Female,Notebook,Personal Care,4.26,7,2.09,31.91,3,2025-03-25
+805,Los Angeles,Los Angeles,Normal,Female,Orange Juice,Beverages,11.11,19,14.78,225.87,0,2025-03-26
+806,Chicago,Chicago,Normal,Female,Orange Juice,Fruits,7.64,20,10.7,163.5,0,2025-03-27
+807,Chicago,Chicago,Normal,Male,Apple,Beverages,9.78,5,3.42,52.32,0,2025-03-28
+808,Chicago,Chicago,Normal,Male,Detergent,Stationery,8.92,4,2.5,38.18,0,2025-03-29
+809,Los Angeles,Los Angeles,Member,Female,Detergent,Beverages,3.82,4,1.07,16.35,1,2025-03-30
+810,New York,New York,Member,Female,Apple,Household,17.25,4,4.83,73.83,7,2025-03-31
+811,Chicago,Chicago,Member,Female,Notebook,Stationery,5.52,20,7.73,118.13,11,2025-04-01
+812,Los Angeles,Los Angeles,Normal,Female,Apple,Beverages,19.05,19,25.34,387.29,0,2025-04-02
+813,Los Angeles,Los Angeles,Normal,Male,Detergent,Beverages,20.23,19,26.91,411.28,0,2025-04-03
+814,Chicago,Chicago,Normal,Female,Apple,Beverages,6.24,10,4.37,66.77,0,2025-04-04
+815,Chicago,Chicago,Member,Male,Apple,Household,15.98,8,8.95,136.79,13,2025-04-05
+816,Los Angeles,Los Angeles,Member,Female,Notebook,Fruits,3.05,17,3.63,55.48,5,2025-04-06
+817,Chicago,Chicago,Member,Female,Notebook,Fruits,14.43,18,18.18,277.92,27,2025-04-07
+818,Los Angeles,Los Angeles,Normal,Male,Orange Juice,Beverages,9.0,1,0.63,9.63,0,2025-04-08
+819,Los Angeles,Los Angeles,Member,Female,Notebook,Fruits,3.96,20,5.54,84.74,8,2025-04-09
+820,New York,New York,Member,Female,Shampoo,Stationery,12.87,7,6.31,96.4,9,2025-04-10
+821,Los Angeles,Los Angeles,Member,Female,Detergent,Personal Care,20.21,14,19.81,302.75,30,2025-04-11
+822,New York,New York,Member,Female,Shampoo,Personal Care,6.1,18,7.69,117.49,11,2025-04-12
+823,Los Angeles,Los Angeles,Member,Female,Detergent,Fruits,18.97,3,3.98,60.89,6,2025-04-13
+824,Chicago,Chicago,Normal,Female,Detergent,Personal Care,20.64,8,11.56,176.68,0,2025-04-14
+825,Los Angeles,Los Angeles,Member,Male,Shampoo,Fruits,14.76,15,15.5,236.9,23,2025-04-15
+826,Los Angeles,Los Angeles,Normal,Male,Apple,Personal Care,16.21,15,17.02,260.17,0,2025-04-16
+827,Chicago,Chicago,Normal,Male,Orange Juice,Personal Care,11.91,13,10.84,165.67,0,2025-04-17
+828,New York,New York,Member,Female,Notebook,Personal Care,10.34,4,2.9,44.26,4,2025-04-18
+829,Los Angeles,Los Angeles,Normal,Male,Notebook,Fruits,1.33,17,1.58,24.19,0,2025-04-19
+830,New York,New York,Member,Male,Apple,Fruits,12.95,14,12.69,193.99,19,2025-04-20
+831,Los Angeles,Los Angeles,Normal,Female,Notebook,Personal Care,9.07,17,10.79,164.98,0,2025-04-21
+832,Chicago,Chicago,Member,Female,Apple,Stationery,7.59,10,5.31,81.21,8,2025-04-22
+833,New York,New York,Member,Male,Orange Juice,Personal Care,18.92,5,6.62,101.22,10,2025-04-23
+834,Chicago,Chicago,Member,Male,Orange Juice,Personal Care,20.61,12,17.31,264.63,26,2025-04-24
+835,Los Angeles,Los Angeles,Member,Female,Notebook,Household,18.97,7,9.3,142.09,14,2025-04-25
+836,New York,New York,Member,Male,Detergent,Household,17.34,18,21.85,333.97,33,2025-04-26
+837,Chicago,Chicago,Member,Male,Shampoo,Fruits,10.78,17,12.83,196.09,19,2025-04-27
+838,Chicago,Chicago,Normal,Female,Shampoo,Fruits,11.41,20,15.97,244.17,0,2025-04-28
+839,New York,New York,Member,Male,Shampoo,Personal Care,14.63,19,19.46,297.43,29,2025-04-29
+840,Los Angeles,Los Angeles,Normal,Female,Shampoo,Household,20.51,1,1.44,21.95,0,2025-04-30
+841,Chicago,Chicago,Normal,Female,Apple,Beverages,12.4,7,6.08,92.88,0,2025-05-01
+842,Chicago,Chicago,Member,Male,Apple,Personal Care,19.4,10,13.58,207.58,20,2025-05-02
+843,New York,New York,Member,Male,Notebook,Beverages,9.01,7,4.41,67.48,6,2025-05-03
+844,New York,New York,Normal,Male,Shampoo,Beverages,20.64,5,7.22,110.42,0,2025-05-04
+845,New York,New York,Member,Female,Orange Juice,Fruits,1.1,10,0.77,11.77,1,2025-05-05
+846,Chicago,Chicago,Normal,Female,Shampoo,Stationery,13.11,7,6.42,98.19,0,2025-05-06
+847,Los Angeles,Los Angeles,Member,Male,Shampoo,Personal Care,14.26,16,15.97,244.13,24,2025-05-07
+848,New York,New York,Normal,Female,Notebook,Household,2.42,9,1.52,23.3,0,2025-05-08
+849,New York,New York,Normal,Male,Orange Juice,Fruits,4.84,4,1.36,20.72,0,2025-05-09
+850,New York,New York,Member,Male,Orange Juice,Beverages,1.9,11,1.46,22.36,2,2025-05-10
+851,Los Angeles,Los Angeles,Normal,Male,Orange Juice,Personal Care,8.39,16,9.4,143.64,0,2025-05-11
+852,New York,New York,Normal,Female,Orange Juice,Stationery,12.13,19,16.13,246.6,0,2025-05-12
+853,Chicago,Chicago,Member,Female,Shampoo,Beverages,5.44,7,2.67,40.75,4,2025-05-13
+854,Chicago,Chicago,Normal,Male,Detergent,Stationery,15.31,10,10.72,163.82,0,2025-05-14
+855,Chicago,Chicago,Normal,Male,Orange Juice,Fruits,8.72,15,9.16,139.96,0,2025-05-15
+856,Chicago,Chicago,Member,Female,Detergent,Beverages,3.05,19,4.06,62.01,6,2025-05-16
+857,Los Angeles,Los Angeles,Normal,Male,Shampoo,Fruits,1.05,15,1.1,16.85,0,2025-05-17
+858,New York,New York,Member,Female,Orange Juice,Stationery,6.48,7,3.18,48.54,4,2025-05-18
+859,Chicago,Chicago,Normal,Male,Notebook,Stationery,14.8,10,10.36,158.36,0,2025-05-19
+860,New York,New York,Member,Male,Shampoo,Stationery,15.1,18,19.03,290.83,29,2025-05-20
+861,New York,New York,Member,Female,Shampoo,Household,9.34,16,10.46,159.9,15,2025-05-21
+862,Los Angeles,Los Angeles,Normal,Female,Notebook,Stationery,1.27,8,0.71,10.87,0,2025-05-22
+863,Chicago,Chicago,Member,Male,Notebook,Personal Care,19.44,2,2.72,41.6,4,2025-05-23
+864,Chicago,Chicago,Member,Male,Notebook,Stationery,2.83,6,1.19,18.17,1,2025-05-24
+865,New York,New York,Normal,Female,Apple,Stationery,16.17,3,3.4,51.91,0,2025-05-25
+866,Chicago,Chicago,Member,Female,Orange Juice,Household,4.67,13,4.25,64.96,6,2025-05-26
+867,Los Angeles,Los Angeles,Member,Male,Detergent,Fruits,14.69,18,18.51,282.93,28,2025-05-27
+868,Chicago,Chicago,Normal,Male,Shampoo,Beverages,5.88,13,5.35,81.79,0,2025-05-28
+869,Los Angeles,Los Angeles,Member,Female,Notebook,Household,12.1,16,13.55,207.15,20,2025-05-29
+870,New York,New York,Normal,Male,Apple,Stationery,4.14,15,4.35,66.45,0,2025-05-30
+871,New York,New York,Member,Female,Shampoo,Fruits,9.86,15,10.35,158.25,15,2025-05-31
+872,Chicago,Chicago,Normal,Male,Orange Juice,Personal Care,2.82,18,3.55,54.31,0,2025-06-01
+873,New York,New York,Normal,Female,Shampoo,Personal Care,5.25,13,4.78,73.03,0,2025-06-02
+874,Los Angeles,Los Angeles,Normal,Male,Orange Juice,Personal Care,6.42,18,8.09,123.65,0,2025-06-03
+875,Chicago,Chicago,Member,Female,Detergent,Personal Care,4.3,14,4.21,64.41,6,2025-06-04
+876,New York,New York,Member,Male,Shampoo,Beverages,3.13,17,3.72,56.93,5,2025-06-05
+877,Los Angeles,Los Angeles,Member,Male,Apple,Fruits,16.36,10,11.45,175.05,17,2025-06-06
+878,New York,New York,Member,Male,Apple,Stationery,11.71,11,9.02,137.83,13,2025-06-07
+879,Chicago,Chicago,Normal,Male,Shampoo,Fruits,15.68,1,1.1,16.78,0,2025-06-08
+880,New York,New York,Normal,Female,Shampoo,Personal Care,7.14,2,1.0,15.28,0,2025-06-09
+881,New York,New York,Member,Female,Shampoo,Personal Care,20.98,16,23.5,359.18,35,2025-06-10
+882,Los Angeles,Los Angeles,Member,Female,Shampoo,Household,10.45,3,2.19,33.54,3,2025-06-11
+883,Los Angeles,Los Angeles,Member,Female,Apple,Stationery,8.61,19,11.45,175.04,17,2025-06-12
+884,New York,New York,Member,Female,Apple,Beverages,12.16,19,16.17,247.21,24,2025-06-13
+885,New York,New York,Normal,Male,Shampoo,Personal Care,6.11,2,0.86,13.08,0,2025-06-14
+886,New York,New York,Normal,Female,Orange Juice,Stationery,17.83,8,9.98,152.62,0,2025-06-15
+887,Chicago,Chicago,Member,Female,Shampoo,Personal Care,6.21,17,7.39,112.96,11,2025-06-16
+888,Chicago,Chicago,Member,Female,Notebook,Fruits,10.65,19,14.16,216.51,21,2025-06-17
+889,Los Angeles,Los Angeles,Normal,Female,Orange Juice,Personal Care,2.71,19,3.6,55.09,0,2025-06-18
+890,New York,New York,Member,Female,Orange Juice,Personal Care,10.27,2,1.44,21.98,2,2025-06-19
+891,Chicago,Chicago,Normal,Female,Notebook,Stationery,18.31,9,11.54,176.33,0,2025-06-20
+892,Chicago,Chicago,Member,Male,Shampoo,Household,5.95,3,1.25,19.1,1,2025-06-21
+893,Los Angeles,Los Angeles,Normal,Female,Shampoo,Beverages,7.27,16,8.14,124.46,0,2025-06-22
+894,Chicago,Chicago,Normal,Male,Apple,Beverages,9.82,14,9.62,147.1,0,2025-06-23
+895,Chicago,Chicago,Member,Male,Detergent,Household,8.24,13,7.5,114.62,11,2025-06-24
+896,Los Angeles,Los Angeles,Member,Female,Orange Juice,Household,4.54,10,3.18,48.58,4,2025-06-25
+897,New York,New York,Normal,Female,Notebook,Beverages,17.65,5,6.18,94.43,0,2025-06-26
+898,Los Angeles,Los Angeles,Normal,Female,Apple,Household,1.54,19,2.05,31.31,0,2025-06-27
+899,Chicago,Chicago,Normal,Female,Notebook,Personal Care,7.33,1,0.51,7.84,0,2025-06-28
+900,Los Angeles,Los Angeles,Normal,Male,Orange Juice,Stationery,5.36,2,0.75,11.47,0,2025-06-29
+901,Chicago,Chicago,Member,Male,Apple,Fruits,16.1,6,6.76,103.36,10,2025-01-01
+902,New York,New York,Normal,Male,Detergent,Household,13.4,17,15.95,243.75,0,2025-01-02
+903,Los Angeles,Los Angeles,Member,Male,Shampoo,Personal Care,20.92,18,26.36,402.92,40,2025-01-03
+904,Chicago,Chicago,Member,Female,Shampoo,Household,18.41,7,9.02,137.89,13,2025-01-04
+905,Los Angeles,Los Angeles,Member,Male,Notebook,Beverages,20.26,2,2.84,43.36,4,2025-01-05
+906,New York,New York,Normal,Male,Detergent,Fruits,20.68,14,20.27,309.79,0,2025-01-06
+907,Chicago,Chicago,Member,Female,Shampoo,Personal Care,16.57,17,19.72,301.41,30,2025-01-07
+908,Los Angeles,Los Angeles,Normal,Male,Detergent,Household,5.33,2,0.75,11.41,0,2025-01-08
+909,New York,New York,Member,Female,Orange Juice,Stationery,16.32,17,19.42,296.86,29,2025-01-09
+910,Los Angeles,Los Angeles,Member,Male,Shampoo,Fruits,10.12,12,8.5,129.94,12,2025-01-10
+911,Chicago,Chicago,Member,Male,Shampoo,Stationery,10.51,5,3.68,56.23,5,2025-01-11
+912,New York,New York,Normal,Female,Notebook,Stationery,6.32,4,1.77,27.05,0,2025-01-12
+913,New York,New York,Member,Male,Detergent,Household,12.12,9,7.64,116.72,11,2025-01-13
+914,New York,New York,Member,Female,Apple,Household,10.69,2,1.5,22.88,2,2025-01-14
+915,Chicago,Chicago,Member,Male,Detergent,Stationery,15.85,16,17.75,271.35,27,2025-01-15
+916,Chicago,Chicago,Normal,Male,Apple,Fruits,4.6,7,2.25,34.45,0,2025-01-16
+917,New York,New York,Normal,Female,Apple,Beverages,5.18,3,1.09,16.63,0,2025-01-17
+918,New York,New York,Member,Male,Orange Juice,Beverages,6.64,11,5.11,78.15,7,2025-01-18
+919,New York,New York,Member,Female,Apple,Household,16.03,19,21.32,325.89,32,2025-01-19
+920,Los Angeles,Los Angeles,Normal,Female,Shampoo,Fruits,14.18,12,11.91,182.07,0,2025-01-20
+921,Chicago,Chicago,Member,Female,Detergent,Fruits,17.99,12,15.11,230.99,23,2025-01-21
+922,New York,New York,Member,Female,Shampoo,Personal Care,12.99,13,11.82,180.69,18,2025-01-22
+923,New York,New York,Member,Female,Apple,Personal Care,13.91,4,3.89,59.53,5,2025-01-23
+924,New York,New York,Normal,Male,Orange Juice,Stationery,2.23,3,0.47,7.16,0,2025-01-24
+925,Los Angeles,Los Angeles,Member,Female,Notebook,Personal Care,19.96,4,5.59,85.43,8,2025-01-25
+926,New York,New York,Normal,Male,Orange Juice,Personal Care,17.69,19,23.53,359.64,0,2025-01-26
+927,Chicago,Chicago,Member,Male,Shampoo,Household,8.38,17,9.97,152.43,15,2025-01-27
+928,New York,New York,Member,Female,Detergent,Stationery,9.4,3,1.97,30.17,3,2025-01-28
+929,Los Angeles,Los Angeles,Normal,Male,Shampoo,Fruits,4.69,9,2.95,45.16,0,2025-01-29
+930,Los Angeles,Los Angeles,Member,Male,Detergent,Personal Care,4.71,18,5.93,90.71,9,2025-01-30
+931,New York,New York,Member,Male,Detergent,Beverages,15.74,19,20.93,319.99,31,2025-01-31
+932,Los Angeles,Los Angeles,Normal,Male,Shampoo,Personal Care,15.45,11,11.9,181.85,0,2025-02-01
+933,New York,New York,Member,Female,Orange Juice,Beverages,18.54,11,14.28,218.22,21,2025-02-02
+934,New York,New York,Member,Female,Orange Juice,Personal Care,3.24,3,0.68,10.4,1,2025-02-03
+935,Chicago,Chicago,Normal,Female,Shampoo,Beverages,7.94,18,10.0,152.92,0,2025-02-04
+936,Los Angeles,Los Angeles,Member,Male,Apple,Beverages,5.92,7,2.9,44.34,4,2025-02-05
+937,Chicago,Chicago,Member,Female,Shampoo,Fruits,5.8,18,7.31,111.71,11,2025-02-06
+938,New York,New York,Member,Female,Shampoo,Personal Care,12.98,12,10.9,166.66,16,2025-02-07
+939,New York,New York,Normal,Male,Apple,Stationery,5.1,2,0.71,10.91,0,2025-02-08
+940,New York,New York,Member,Female,Notebook,Household,19.02,6,7.99,122.11,12,2025-02-09
+941,Chicago,Chicago,Member,Female,Orange Juice,Stationery,8.95,7,4.39,67.04,6,2025-02-10
+942,New York,New York,Normal,Female,Shampoo,Personal Care,10.92,18,13.76,210.32,0,2025-02-11
+943,New York,New York,Member,Male,Apple,Household,10.77,4,3.02,46.1,4,2025-02-12
+944,Los Angeles,Los Angeles,Normal,Female,Orange Juice,Fruits,3.14,19,4.18,63.84,0,2025-02-13
+945,Los Angeles,Los Angeles,Member,Female,Orange Juice,Personal Care,13.01,16,14.57,222.73,22,2025-02-14
+946,Chicago,Chicago,Normal,Male,Notebook,Personal Care,7.43,8,4.16,63.6,0,2025-02-15
+947,Chicago,Chicago,Normal,Male,Notebook,Personal Care,13.7,20,19.18,293.18,0,2025-02-16
+948,New York,New York,Normal,Male,Orange Juice,Beverages,15.49,16,17.35,265.19,0,2025-02-17
+949,Los Angeles,Los Angeles,Member,Female,Shampoo,Beverages,19.42,2,2.72,41.56,4,2025-02-18
+950,Chicago,Chicago,Normal,Male,Shampoo,Personal Care,10.56,18,13.31,203.39,0,2025-02-19
+951,Chicago,Chicago,Member,Male,Shampoo,Household,20.11,14,19.71,301.25,30,2025-02-20
+952,Chicago,Chicago,Normal,Male,Orange Juice,Fruits,19.88,1,1.39,21.27,0,2025-02-21
+953,Chicago,Chicago,Normal,Male,Notebook,Household,4.72,20,6.61,101.01,0,2025-02-22
+954,Chicago,Chicago,Member,Male,Apple,Beverages,13.18,13,11.99,183.33,18,2025-02-23
+955,Chicago,Chicago,Member,Male,Orange Juice,Household,20.81,17,24.76,378.53,37,2025-02-24
+956,Chicago,Chicago,Member,Female,Orange Juice,Personal Care,17.18,19,22.85,349.27,34,2025-02-25
+957,Chicago,Chicago,Member,Male,Shampoo,Personal Care,20.12,14,19.72,301.4,30,2025-02-26
+958,New York,New York,Member,Female,Notebook,Household,20.28,20,28.39,433.99,43,2025-02-27
+959,Chicago,Chicago,Normal,Male,Detergent,Household,1.91,5,0.67,10.22,0,2025-02-28
+960,Chicago,Chicago,Member,Female,Apple,Personal Care,8.78,8,4.92,75.16,7,2025-03-01
+961,Chicago,Chicago,Member,Male,Notebook,Stationery,10.37,9,6.53,99.86,9,2025-03-02
+962,Chicago,Chicago,Normal,Male,Apple,Stationery,12.94,3,2.72,41.54,0,2025-03-03
+963,Los Angeles,Los Angeles,Normal,Male,Apple,Personal Care,17.01,15,17.86,273.01,0,2025-03-04
+964,New York,New York,Normal,Female,Detergent,Beverages,16.15,7,7.91,120.96,0,2025-03-05
+965,Los Angeles,Los Angeles,Normal,Female,Detergent,Fruits,9.14,12,7.68,117.36,0,2025-03-06
+966,Chicago,Chicago,Member,Female,Notebook,Fruits,5.99,20,8.39,128.19,12,2025-03-07
+967,Los Angeles,Los Angeles,Member,Male,Notebook,Beverages,3.31,20,4.63,70.83,7,2025-03-08
+968,New York,New York,Normal,Male,Detergent,Stationery,14.02,2,1.96,30.0,0,2025-03-09
+969,New York,New York,Normal,Male,Apple,Household,7.63,11,5.88,89.81,0,2025-03-10
+970,New York,New York,Normal,Male,Notebook,Stationery,18.7,6,7.85,120.05,0,2025-03-11
+971,Chicago,Chicago,Normal,Male,Shampoo,Beverages,7.12,19,9.47,144.75,0,2025-03-12
+972,New York,New York,Normal,Female,Shampoo,Personal Care,13.28,2,1.86,28.42,0,2025-03-13
+973,New York,New York,Member,Female,Detergent,Household,6.22,10,4.35,66.55,6,2025-03-14
+974,New York,New York,Normal,Female,Notebook,Household,6.41,8,3.59,54.87,0,2025-03-15
+975,New York,New York,Member,Male,Detergent,Personal Care,10.01,2,1.4,21.42,2,2025-03-16
+976,New York,New York,Member,Male,Shampoo,Household,7.51,11,5.78,88.39,8,2025-03-17
+977,Chicago,Chicago,Member,Female,Apple,Personal Care,15.18,7,7.44,113.7,11,2025-03-18
+978,Los Angeles,Los Angeles,Member,Male,Notebook,Fruits,2.04,10,1.43,21.83,2,2025-03-19
+979,Chicago,Chicago,Member,Female,Orange Juice,Fruits,18.34,13,16.69,255.11,25,2025-03-20
+980,Los Angeles,Los Angeles,Normal,Male,Orange Juice,Beverages,1.09,8,0.61,9.33,0,2025-03-21
+981,New York,New York,Member,Male,Shampoo,Fruits,17.56,16,19.67,300.63,30,2025-03-22
+982,Chicago,Chicago,Member,Male,Apple,Stationery,1.23,1,0.09,1.32,0,2025-03-23
+983,Chicago,Chicago,Normal,Female,Apple,Personal Care,8.02,9,5.05,77.23,0,2025-03-24
+984,Los Angeles,Los Angeles,Member,Female,Orange Juice,Fruits,11.14,2,1.56,23.84,2,2025-03-25
+985,Chicago,Chicago,Member,Male,Shampoo,Household,20.96,2,2.93,44.85,4,2025-03-26
+986,New York,New York,Member,Male,Orange Juice,Personal Care,6.85,19,9.11,139.26,13,2025-03-27
+987,New York,New York,Normal,Male,Apple,Fruits,2.31,19,3.07,46.96,0,2025-03-28
+988,New York,New York,Member,Female,Apple,Stationery,11.35,9,7.15,109.3,10,2025-03-29
+989,Los Angeles,Los Angeles,Member,Female,Shampoo,Beverages,10.49,9,6.61,101.02,10,2025-03-30
+990,Chicago,Chicago,Member,Female,Notebook,Stationery,5.67,10,3.97,60.67,6,2025-03-31
+991,Chicago,Chicago,Normal,Female,Detergent,Stationery,8.18,1,0.57,8.75,0,2025-04-01
+992,New York,New York,Normal,Male,Notebook,Household,11.33,9,7.14,109.11,0,2025-04-02
+993,New York,New York,Normal,Female,Apple,Stationery,4.59,19,6.1,93.31,0,2025-04-03
+994,New York,New York,Normal,Female,Orange Juice,Personal Care,5.16,13,4.7,71.78,0,2025-04-04
+995,New York,New York,Member,Male,Notebook,Personal Care,6.6,5,2.31,35.31,3,2025-04-05
+996,New York,New York,Member,Female,Shampoo,Stationery,1.55,11,1.19,18.24,1,2025-04-06
+997,New York,New York,Member,Male,Detergent,Personal Care,2.44,7,1.2,18.28,1,2025-04-07
+998,New York,New York,Member,Female,Shampoo,Stationery,17.92,2,2.51,38.35,3,2025-04-08
+999,New York,New York,Member,Female,Shampoo,Beverages,17.41,4,4.87,74.51,7,2025-04-09
+1000,New York,New York,Normal,Male,Orange Juice,Stationery,4.11,4,1.15,17.59,0,2025-04-10

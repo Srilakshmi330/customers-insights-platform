@@ -1,0 +1,10 @@
+streamlit
+plotly
+pandas
+Werkzeug
+SQLAlchemy
+psycopg2-binary
+Faker
+scikit-learn
+reportlab
+openpyxl
