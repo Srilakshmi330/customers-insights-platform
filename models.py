@@ -242,6 +242,9 @@ class Product(Base):
     sku = Column(String)
     unit_price = Column(Float, nullable=False)
     description = Column(Text)
+    store = Column(String)
+    warehouse = Column(String)
+    image_path = Column(String)
     created_at = Column(DateTime, nullable=False, server_default=func.now())
 
     vendor = relationship("Vendor", back_populates="products")
@@ -251,6 +254,7 @@ class Product(Base):
     reviews = relationship("Review", back_populates="product")
     activity = relationship("CustomerActivity", back_populates="product")
     recommendations = relationship("Recommendation", back_populates="product")
+    movements = relationship("InventoryMovement", back_populates="product")
 
     @staticmethod
     def list_for_vendor(vendor_id):
@@ -267,6 +271,7 @@ class Product(Base):
                     "id": p.id, "vendor_id": p.vendor_id, "category_id": p.category_id,
                     "name": p.name, "sku": p.sku, "unit_price": p.unit_price,
                     "description": p.description, "created_at": p.created_at,
+                    "store": p.store, "warehouse": p.warehouse, "image_path": p.image_path,
                     "category_name": p.category.name if p.category else None,
                     "stock_quantity": p.inventory.stock_quantity if p.inventory else None,
                     "reorder_level": p.inventory.reorder_level if p.inventory else None,
@@ -296,7 +301,8 @@ class Product(Base):
             ]
 
     @staticmethod
-    def create(vendor_id, name, category_id, sku, unit_price, description, initial_stock, reorder_level):
+    def create(vendor_id, name, category_id, sku, unit_price, description, initial_stock,
+               reorder_level, store=None, warehouse=None):
         name = name.strip()
         if not name or unit_price is None:
             return None, "Product name and unit price are required."
@@ -306,18 +312,25 @@ class Product(Base):
             product = Product(
                 vendor_id=vendor_id, category_id=category_id, name=name,
                 sku=sku or None, unit_price=unit_price, description=description or None,
+                store=store or None, warehouse=warehouse or None,
             )
             session.add(product)
             session.flush()
+            initial_stock = initial_stock or 0
             session.add(Inventory(
-                product_id=product.id, stock_quantity=initial_stock or 0,
+                product_id=product.id, stock_quantity=initial_stock,
                 reorder_level=reorder_level or 10,
             ))
+            if initial_stock > 0:
+                session.add(InventoryMovement(
+                    product_id=product.id, vendor_id=vendor_id, movement_type="in",
+                    quantity=initial_stock, reason="initial_stock",
+                ))
             product_id = product.id
         return product_id, None
 
     @staticmethod
-    def update(product_id, name, category_id, sku, unit_price, description):
+    def update(product_id, name, category_id, sku, unit_price, description, store=None, warehouse=None):
         with session_scope() as session:
             product = session.get(Product, product_id)
             if product:
@@ -326,6 +339,22 @@ class Product(Base):
                 product.sku = sku or None
                 product.unit_price = unit_price
                 product.description = description or None
+                product.store = store or None
+                product.warehouse = warehouse or None
+
+    @staticmethod
+    def update_price(product_id, unit_price):
+        with session_scope() as session:
+            product = session.get(Product, product_id)
+            if product:
+                product.unit_price = unit_price
+
+    @staticmethod
+    def update_image(product_id, image_path):
+        with session_scope() as session:
+            product = session.get(Product, product_id)
+            if product:
+                product.image_path = image_path
 
     @staticmethod
     def delete(product_id):
@@ -334,6 +363,7 @@ class Product(Base):
             session.query(Recommendation).filter_by(product_id=product_id).delete()
             session.query(CustomerActivity).filter_by(product_id=product_id).delete()
             session.query(Review).filter_by(product_id=product_id).delete()
+            session.query(InventoryMovement).filter_by(product_id=product_id).delete()
             session.query(Inventory).filter_by(product_id=product_id).delete()
             session.query(Product).filter_by(id=product_id).delete()
 
@@ -351,12 +381,167 @@ class Inventory(Base):
 
     @staticmethod
     def update_stock(product_id, stock_quantity, reorder_level):
+        """Kept for backward compatibility — sets stock directly without logging
+        a movement. Prefer adjust_stock() for any user-facing stock change so it
+        shows up in Inventory Monitoring."""
         with session_scope() as session:
             inventory = session.query(Inventory).filter_by(product_id=product_id).first()
             if inventory:
                 inventory.stock_quantity = stock_quantity
                 inventory.reorder_level = reorder_level
                 inventory.updated_at = datetime.now()
+
+    @staticmethod
+    def adjust_stock(product_id, vendor_id, new_stock_quantity, new_reorder_level, reason="adjustment"):
+        """Sets stock to an explicit new value and logs the difference as an
+        inventory movement (in if it went up, out if it went down) so Inventory
+        Monitoring has a real stock-in/stock-out ledger to report on."""
+        with session_scope() as session:
+            inventory = session.query(Inventory).filter_by(product_id=product_id).first()
+            if not inventory:
+                return
+            old_quantity = inventory.stock_quantity
+            delta = new_stock_quantity - old_quantity
+            inventory.stock_quantity = new_stock_quantity
+            inventory.reorder_level = new_reorder_level
+            inventory.updated_at = datetime.now()
+            if delta > 0:
+                session.add(InventoryMovement(
+                    product_id=product_id, vendor_id=vendor_id, movement_type="in",
+                    quantity=delta, reason=reason,
+                ))
+            elif delta < 0:
+                session.add(InventoryMovement(
+                    product_id=product_id, vendor_id=vendor_id, movement_type="out",
+                    quantity=abs(delta), reason=reason,
+                ))
+
+
+class InventoryMovement(Base):
+    """A ledger of every stock change: sales (out), restocks/manual increases (in),
+    manual decreases/write-offs (out), and bulk-import adjustments. Current Stock
+    Levels live on Inventory; this table is what powers Stock In / Stock Out /
+    Inventory Turnover / Monthly Usage in Inventory Monitoring."""
+    __tablename__ = "inventory_movements"
+
+    id = Column(Integer, primary_key=True)
+    product_id = Column(Integer, ForeignKey("products.id"), nullable=False, index=True)
+    vendor_id = Column(Integer, ForeignKey("vendors.id"), nullable=False, index=True)
+    movement_type = Column(String, nullable=False)
+    quantity = Column(Integer, nullable=False)
+    reason = Column(String)
+    occurred_at = Column(DateTime, nullable=False, server_default=func.now())
+
+    __table_args__ = (CheckConstraint("movement_type IN ('in','out')", name="ck_movement_type"),)
+
+    product = relationship("Product", back_populates="movements")
+    vendor = relationship("Vendor")
+
+    @staticmethod
+    def record(product_id, vendor_id, movement_type, quantity, reason, occurred_at=None):
+        if quantity <= 0:
+            return
+        with session_scope() as session:
+            session.add(InventoryMovement(
+                product_id=product_id, vendor_id=vendor_id, movement_type=movement_type,
+                quantity=quantity, reason=reason, occurred_at=occurred_at or datetime.now(),
+            ))
+
+    @staticmethod
+    def summary_for_vendor(vendor_id, days=30):
+        """Returns stock in/out totals for the trailing window, plus a rough
+        inventory turnover estimate (units sold / average current stock)."""
+        since = datetime.now() - timedelta(days=days)
+        with session_scope() as session:
+            stock_in = (
+                session.query(func.coalesce(func.sum(InventoryMovement.quantity), 0))
+                .filter(
+                    InventoryMovement.vendor_id == vendor_id,
+                    InventoryMovement.movement_type == "in",
+                    InventoryMovement.occurred_at >= since,
+                )
+                .scalar()
+            )
+            stock_out = (
+                session.query(func.coalesce(func.sum(InventoryMovement.quantity), 0))
+                .filter(
+                    InventoryMovement.vendor_id == vendor_id,
+                    InventoryMovement.movement_type == "out",
+                    InventoryMovement.occurred_at >= since,
+                )
+                .scalar()
+            )
+            units_sold = (
+                session.query(func.coalesce(func.sum(InventoryMovement.quantity), 0))
+                .filter(
+                    InventoryMovement.vendor_id == vendor_id,
+                    InventoryMovement.movement_type == "out",
+                    InventoryMovement.reason == "sale",
+                    InventoryMovement.occurred_at >= since,
+                )
+                .scalar()
+            )
+            current_total_stock = (
+                session.query(func.coalesce(func.sum(Inventory.stock_quantity), 0))
+                .join(Product, Product.id == Inventory.product_id)
+                .filter(Product.vendor_id == vendor_id)
+                .scalar()
+            )
+
+        avg_inventory = current_total_stock if current_total_stock > 0 else 1
+        turnover = round(units_sold / avg_inventory, 2)
+
+        return {
+            "stock_in": int(stock_in),
+            "stock_out": int(stock_out),
+            "units_sold": int(units_sold),
+            "current_total_stock": int(current_total_stock),
+            "turnover": turnover,
+            "days": days,
+        }
+
+    @staticmethod
+    def list_for_vendor(vendor_id, days=90):
+        since = datetime.now() - timedelta(days=days)
+        with session_scope() as session:
+            rows = (
+                session.query(InventoryMovement)
+                .options(joinedload(InventoryMovement.product))
+                .filter(InventoryMovement.vendor_id == vendor_id, InventoryMovement.occurred_at >= since)
+                .order_by(InventoryMovement.occurred_at.desc())
+                .all()
+            )
+            return [
+                {
+                    "occurred_at": m.occurred_at, "movement_type": m.movement_type,
+                    "quantity": m.quantity, "reason": m.reason,
+                    "product": m.product.name if m.product else "—",
+                }
+                for m in rows
+            ]
+
+    @staticmethod
+    def monthly_usage_for_vendor(vendor_id, months=6):
+        """Units sold (stock-out, reason='sale') grouped by calendar month, for
+        the Monthly Usage chart."""
+        since = datetime.now() - timedelta(days=months * 31)
+        with session_scope() as session:
+            rows = (
+                session.query(
+                    func.to_char(InventoryMovement.occurred_at, "YYYY-MM").label("month"),
+                    func.sum(InventoryMovement.quantity).label("units"),
+                )
+                .filter(
+                    InventoryMovement.vendor_id == vendor_id,
+                    InventoryMovement.movement_type == "out",
+                    InventoryMovement.reason == "sale",
+                    InventoryMovement.occurred_at >= since,
+                )
+                .group_by("month")
+                .order_by("month")
+                .all()
+            )
+            return [{"month": r.month, "units_sold": int(r.units)} for r in rows]
 
 
 class Customer(Base):
@@ -432,9 +617,11 @@ class Order(Base):
     def create_with_items(customer_id, items, payment_method="cash"):
         """items: list of {"product_id": int, "quantity": int}.
         Validates stock availability before writing anything, then creates the
-        order, its line items, a paid payment record, decrements inventory, and
-        logs a cart_add activity per item so downstream analytics have data to
-        show. Returns (order_id_or_none, error_or_none)."""
+        order, its line items, a paid payment record, decrements inventory, logs
+        an inventory-out movement (reason='sale') per item so Inventory Monitoring
+        can report Stock Out / Turnover / Monthly Usage, and logs a cart_add
+        activity per item so downstream analytics have data to show.
+        Returns (order_id_or_none, error_or_none)."""
         if not items:
             return None, "Add at least one product line."
 
@@ -472,6 +659,10 @@ class Order(Base):
                 ))
                 product.inventory.stock_quantity -= qty
                 product.inventory.updated_at = datetime.now()
+                session.add(InventoryMovement(
+                    product_id=product.id, vendor_id=product.vendor_id, movement_type="out",
+                    quantity=qty, reason="sale",
+                ))
                 session.add(CustomerActivity(
                     customer_id=customer_id, product_id=product.id, activity_type="cart_add",
                 ))
@@ -721,5 +912,111 @@ class ForecastResult(Base):
     product_id = Column(Integer, ForeignKey("products.id"), index=True)
     forecast_date = Column(DateTime, nullable=False)
     predicted_revenue = Column(Float)
+    predicted_quantity = Column(Float)
     model_used = Column(String)
     generated_at = Column(DateTime, nullable=False, server_default=func.now())
+
+    @staticmethod
+    def record_batch(vendor_id, product_id, forecast_rows, model_used):
+        """forecast_rows: list of {"date": datetime, "predicted_quantity": float,
+        "predicted_revenue": float}. Stores one row per forecasted day so past
+        forecasts stay auditable (what did we predict, and when)."""
+        with session_scope() as session:
+            for row in forecast_rows:
+                session.add(ForecastResult(
+                    vendor_id=vendor_id, product_id=product_id,
+                    forecast_date=row["date"], predicted_quantity=row["predicted_quantity"],
+                    predicted_revenue=row.get("predicted_revenue"), model_used=model_used,
+                ))
+
+    @staticmethod
+    def latest_batch_for_product(product_id):
+        with session_scope() as session:
+            rows = (
+                session.query(ForecastResult)
+                .filter(ForecastResult.product_id == product_id)
+                .order_by(ForecastResult.generated_at.desc())
+                .limit(60)
+                .all()
+            )
+            return [
+                {
+                    "forecast_date": r.forecast_date, "predicted_quantity": r.predicted_quantity,
+                    "predicted_revenue": r.predicted_revenue, "model_used": r.model_used,
+                    "generated_at": r.generated_at,
+                }
+                for r in rows
+            ]
+
+
+class Promotion(Base):
+    """A vendor-declared promotional period for one product. Used as a real
+    input feature ("Promotion") for Inventory Forecasting — both for training
+    (was this past date under a promotion?) and for forecasting the future
+    (is an upcoming date already scheduled for a promotion?)."""
+    __tablename__ = "promotions"
+
+    id = Column(Integer, primary_key=True)
+    product_id = Column(Integer, ForeignKey("products.id"), nullable=False, index=True)
+    vendor_id = Column(Integer, ForeignKey("vendors.id"), nullable=False, index=True)
+    start_date = Column(DateTime, nullable=False)
+    end_date = Column(DateTime, nullable=False)
+    discount_pct = Column(Float)
+    description = Column(String)
+    created_at = Column(DateTime, nullable=False, server_default=func.now())
+
+    __table_args__ = (CheckConstraint("end_date >= start_date", name="ck_promotion_dates"),)
+
+    @staticmethod
+    def create(product_id, vendor_id, start_date, end_date, discount_pct, description):
+        if end_date < start_date:
+            return None, "End date must be on or after the start date."
+        with session_scope() as session:
+            promo = Promotion(
+                product_id=product_id, vendor_id=vendor_id, start_date=start_date, end_date=end_date,
+                discount_pct=discount_pct, description=description or None,
+            )
+            session.add(promo)
+            session.flush()
+            promo_id = promo.id
+        return promo_id, None
+
+    @staticmethod
+    def list_for_vendor(vendor_id):
+        with session_scope() as session:
+            rows = (
+                session.query(Promotion, Product.name)
+                .join(Product, Product.id == Promotion.product_id)
+                .filter(Promotion.vendor_id == vendor_id)
+                .order_by(Promotion.start_date.desc())
+                .all()
+            )
+            return [
+                {
+                    "id": p.id, "product_id": p.product_id, "product": name,
+                    "start_date": p.start_date, "end_date": p.end_date,
+                    "discount_pct": p.discount_pct, "description": p.description,
+                }
+                for p, name in rows
+            ]
+
+    @staticmethod
+    def list_for_product(product_id):
+        """All promotion date ranges for a product — used by the forecasting
+        engine to build the is_promotion feature for both historical and
+        future dates."""
+        with session_scope() as session:
+            rows = (
+                session.query(Promotion)
+                .filter(Promotion.product_id == product_id)
+                .order_by(Promotion.start_date)
+                .all()
+            )
+            return [{"start_date": p.start_date, "end_date": p.end_date} for p in rows]
+
+    @staticmethod
+    def delete(promotion_id):
+        with session_scope() as session:
+            promo = session.get(Promotion, promotion_id)
+            if promo:
+                session.delete(promo)
