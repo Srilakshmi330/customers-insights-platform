@@ -3,15 +3,18 @@ import time
 import traceback
 
 import streamlit as st
+
+import os
 import pandas as pd
 import plotly.express as px
 from sqlalchemy import text
 
+import churn
 import dataset_import
 import report_builder
 import segmentation
 from models import (
-    Category, Customer, CustomerActivity, Inventory, Order, Product,
+    Category, Customer, CustomerActivity, Inventory, InventoryMovement, Order, Product,
     Recommendation, Review, User, Vendor, init_db, seed_default_users,
 )
 from permissions import (
@@ -20,9 +23,21 @@ from permissions import (
 )
 from schema import connection
 
+
 PURPLE_SEQUENCE = ["#8b5cf6", "#6d28d9", "#c4b5fd", "#f59e0b", "#ef5350", "#42a5f5", "#10b981", "#0ea5e9"]
 
 SESSION_TIMEOUT_SECONDS = 30 * 60
+
+PRODUCT_IMAGE_DIR = "uploads/product_images"
+
+
+def _save_product_image(uploaded_file, product_id):
+    os.makedirs(PRODUCT_IMAGE_DIR, exist_ok=True)
+    ext = os.path.splitext(uploaded_file.name)[1]
+    file_path = os.path.join(PRODUCT_IMAGE_DIR, f"product_{product_id}{ext}")
+    with open(file_path, "wb") as f:
+        f.write(uploaded_file.getbuffer())
+    return file_path
 
 
 def inject_theme_css():
@@ -97,6 +112,24 @@ def pie_chart(df, names, values, title):
         return
     fig = px.pie(df, names=names, values=values, color_discrete_sequence=PURPLE_SEQUENCE, hole=0.35)
     fig.update_traces(textinfo="percent+label")
+    fig.update_layout(title=title, margin=dict(t=40, b=10, l=10, r=10))
+    st.plotly_chart(fig, width="stretch")
+
+
+def line_chart(df, x, y, title):
+    if df.empty:
+        st.info("No data for this selection.")
+        return
+    fig = px.line(df, x=x, y=y, markers=True, color_discrete_sequence=PURPLE_SEQUENCE)
+    fig.update_layout(title=title, margin=dict(t=40, b=10, l=10, r=10))
+    st.plotly_chart(fig, width="stretch")
+
+
+def area_chart(df, x, y, title):
+    if df.empty:
+        st.info("No data for this selection.")
+        return
+    fig = px.area(df, x=x, y=y, color_discrete_sequence=PURPLE_SEQUENCE)
     fig.update_layout(title=title, margin=dict(t=40, b=10, l=10, r=10))
     st.plotly_chart(fig, width="stretch")
 
@@ -430,6 +463,236 @@ def page_customer_segmentation(user):
     )
 
 
+def page_churn(user):
+    st.header("Churn Prediction")
+    st.caption("Predicts churn risk using a logistic regression model trained on each customer's order recency, frequency, and spend.")
+
+    result = churn.run_churn_model()
+    if not result["available"]:
+        st.info("Not enough completed-order history yet to train a churn model — record more orders first.")
+        return
+
+    customers = result["customers"]
+    summary = result["summary"]
+
+    kpi_row([
+        ("Model Accuracy (test set)", f"{result['accuracy']}%"),
+        ("Churned Customers", f"{result['churned_count']} / {result['total_count']}"),
+    ])
+
+    c1, c2 = st.columns(2)
+    with c1:
+        pie_chart(summary, "risk_level", "customers", "Customers by Risk Level")
+    with c2:
+        bar_chart(summary, "risk_level", "avg_spend", "Average Spend by Risk Level")
+
+    fig = px.scatter(
+        customers, x="recency_days", y="total_spend", color="risk_level",
+        color_discrete_sequence=PURPLE_SEQUENCE, title="Churn Risk (Recency vs. Spend)",
+        labels={"recency_days": "Days Since Last Order", "total_spend": "Total Spend"},
+    )
+    fig.update_layout(margin=dict(t=40, b=10, l=10, r=10))
+    st.plotly_chart(fig, width="stretch")
+
+    st.subheader("Risk Summary")
+    st.dataframe(summary, width="stretch", hide_index=True)
+
+    st.subheader("Customer Risk Assignments")
+    display_cols = customers[["customer", "order_count", "total_spend", "recency_days", "churn_probability", "risk_level", "status"]]
+    st.dataframe(display_cols, width="stretch", hide_index=True)
+    st.download_button(
+        "Download Churn Predictions CSV", data=display_cols.to_csv(index=False),
+        file_name="churn_predictions.csv", mime="text/csv",
+    )
+
+
+def page_customer_profile(user):
+    st.header("Customer Profile")
+    st.caption("Full details, purchase history, and activity for a single customer.")
+
+    customers = Customer.list_all()
+    if not customers:
+        st.info("No customers yet — they're created automatically when an order is placed (Manage Orders) or a dataset is imported.")
+        return
+
+    search_name = st.text_input("Search by name", placeholder="Start typing a customer's name...")
+    filtered = [c for c in customers if search_name.lower() in c.name.lower()] if search_name else customers
+
+    if not filtered:
+        st.warning("No customers match that search.")
+        return
+
+    labels = [f"{c.name} (#{c.id})" for c in filtered]
+    selected_label = st.selectbox("Select customer", labels, key="customer_profile_select")
+    selected = filtered[labels.index(selected_label)]
+
+    st.subheader(selected.name)
+    cols = st.columns(5)
+    cols[0].metric("Email", selected.email or "—")
+    cols[1].metric("Phone", selected.phone or "—")
+    cols[2].metric("City", selected.city or "—")
+    cols[3].metric("Gender", selected.gender or "—")
+    cols[4].metric("Age", selected.age or "—")
+
+    orders = Order.list_for_customer(selected.id)
+    reviews = Review.list_for_customer(selected.id)
+
+    orders_df = pd.DataFrame(orders)
+    total_spent = orders_df["total_amount"].sum() if not orders_df.empty else 0
+    completed_orders = int((orders_df["status"] == "completed").sum()) if not orders_df.empty else 0
+
+    kpi_row([
+        ("Total Orders", len(orders)),
+        ("Completed Orders", completed_orders),
+        ("Total Spent", money(total_spent)),
+        ("Reviews Left", len(reviews)),
+    ])
+
+    st.subheader("Purchase History")
+    if orders_df.empty:
+        st.info("This customer has no orders yet.")
+    else:
+        st.dataframe(orders_df, width="stretch", hide_index=True)
+        by_day = orders_df.copy()
+        by_day["day"] = pd.to_datetime(by_day["order_date"], errors="coerce").dt.date
+        by_day = by_day.dropna(subset=["day"]).groupby("day")["total_amount"].sum().reset_index()
+        line_chart(by_day, "day", "total_amount", "Spending Over Time")
+
+    st.subheader("Reviews")
+    if reviews:
+        st.dataframe(pd.DataFrame(reviews), width="stretch", hide_index=True)
+    else:
+        st.info("This customer hasn't left any reviews yet.")
+
+
+def page_advanced_search(user):
+    st.header("Advanced Search")
+    st.caption("Filter customers by City, Gender, Age Range, and Name.")
+
+    cities = Customer.distinct_cities()
+
+    cols = st.columns(4)
+    name_filter = cols[0].text_input("Name contains", key="adv_search_name")
+    city_filter = cols[1].selectbox("City", ["(any)"] + cities, key="adv_search_city")
+    gender_filter = cols[2].selectbox("Gender", ["(any)", "Male", "Female"], key="adv_search_gender")
+    age_range = cols[3].slider("Age range", 18, 80, (18, 80), key="adv_search_age")
+
+    results = Customer.search(
+        name=name_filter or None,
+        city=None if city_filter == "(any)" else city_filter,
+        gender=None if gender_filter == "(any)" else gender_filter,
+        min_age=age_range[0],
+        max_age=age_range[1],
+    )
+
+    st.write(f"**{len(results)} customer(s) found**")
+
+    if not results:
+        st.info("No customers match these filters.")
+        return
+
+    rows = [
+        {
+            "id": c.id, "name": c.name, "email": c.email or "—",
+            "city": c.city or "—", "gender": c.gender or "—", "age": c.age or "—",
+        }
+        for c in results
+    ]
+    st.dataframe(pd.DataFrame(rows), width="stretch", hide_index=True)
+
+    st.caption("Tip: use Customer Profile to see full purchase history for any of these customers.")
+
+
+def page_sales_dashboard(user):
+    st.header("Sales Dashboard")
+    st.caption("Revenue, orders, and sales trends across the platform.")
+
+    period_days = st.selectbox(
+        "Period for Daily Sales", [7, 30, 90], index=1,
+        format_func=lambda d: f"Last {d} days", key="sales_dashboard_period",
+    )
+    margin_pct = st.slider(
+        "Assumed profit margin % (for the Profit estimate below)",
+        min_value=5, max_value=80, value=30, step=5,
+        help="Your data doesn't store product cost, so Profit can't be calculated exactly. "
+             "This applies an assumed margin to Revenue as an estimate — adjust it to match "
+             "your real margins.",
+    )
+
+    with connection() as conn:
+        gmv = conn.execute(text("SELECT COALESCE(SUM(total_amount), 0) FROM orders")).scalar()
+        revenue = conn.execute(text("""
+            SELECT COALESCE(SUM(oi.total_price), 0)
+            FROM order_items oi JOIN orders o ON o.id = oi.order_id
+            WHERE o.status = 'completed'
+        """)).scalar()
+        order_count = conn.execute(text("SELECT COUNT(*) FROM orders")).scalar()
+        completed_order_count = conn.execute(
+            text("SELECT COUNT(*) FROM orders WHERE status = 'completed'")
+        ).scalar()
+
+    aov = round(revenue / completed_order_count, 2) if completed_order_count else 0
+    profit_estimate = round(revenue * (margin_pct / 100), 2)
+
+    kpi_row([
+        ("GMV", money(gmv)),
+        ("Revenue", money(revenue)),
+        (f"Profit (est. {margin_pct}%)", money(profit_estimate)),
+        ("Orders", order_count),
+        ("Avg Order Value", money(aov)),
+    ])
+
+    if order_count == 0:
+        st.info("No orders yet. Record orders under Manage Orders, or import a dataset, to populate this dashboard.")
+        return
+
+    with connection() as conn:
+        daily = pd.read_sql_query(
+            text(f"""
+                SELECT CAST(o.order_date AS DATE) AS day, SUM(oi.total_price) AS revenue
+                FROM order_items oi
+                JOIN orders o ON o.id = oi.order_id
+                WHERE o.status = 'completed' AND o.order_date >= NOW() - INTERVAL '{period_days} days'
+                GROUP BY day ORDER BY day
+            """),
+            conn,
+        )
+        monthly = pd.read_sql_query(
+            text("""
+                SELECT TO_CHAR(o.order_date, 'YYYY-MM') AS month, SUM(oi.total_price) AS revenue
+                FROM order_items oi
+                JOIN orders o ON o.id = oi.order_id
+                WHERE o.status = 'completed' AND o.order_date >= NOW() - INTERVAL '12 months'
+                GROUP BY month ORDER BY month
+            """),
+            conn,
+        )
+        status_counts = pd.read_sql_query(
+            text("SELECT status, COUNT(*) AS count FROM orders GROUP BY status"), conn,
+        )
+        by_payment = pd.read_sql_query(
+            text("""
+                SELECT COALESCE(p.method, 'unknown') AS payment_method, SUM(p.amount) AS revenue
+                FROM payments p
+                WHERE p.status = 'paid'
+                GROUP BY payment_method ORDER BY revenue DESC
+            """),
+            conn,
+        )
+
+    st.subheader("Daily Sales")
+    line_chart(daily, "day", "revenue", f"Revenue by Day (last {period_days} days)")
+
+    st.subheader("Monthly Sales")
+    area_chart(monthly, "month", "revenue", "Revenue by Month (last 12 months)")
+
+    c1, c2 = st.columns(2)
+    with c1:
+        pie_chart(status_counts, "status", "count", "Orders by Status")
+    with c2:
+        bar_chart(by_payment, "payment_method", "revenue", "Revenue by Payment Method")
+
+
 def page_view_analytics(user):
     st.header("View Analytics")
     st.caption("Platform-wide performance across all vendors.")
@@ -726,9 +989,11 @@ def page_manage_products(user):
     st.caption("Products listed under your vendor account.")
 
     products = Product.list_for_vendor(user["vendor_id"])
-    st.dataframe(pd.DataFrame(products), width="stretch", hide_index=True)
 
     if products:
+        display_df = pd.DataFrame(products).drop(columns=["image_path"], errors="ignore")
+        st.dataframe(display_df, width="stretch", hide_index=True)
+
         by_category = (
             pd.DataFrame(products)
             .assign(category_name=lambda d: d["category_name"].fillna("Uncategorized"))
@@ -743,47 +1008,130 @@ def page_manage_products(user):
     category_names = [c.name for c in categories]
     with st.form("create_product_form"):
         cols = st.columns(3)
-        name = cols[0].text_input("Product name")
+        name = cols[0].text_input("Product Name")
         category_choice = cols[1].selectbox("Category", ["(new category)"] + category_names)
         new_category_name = cols[2].text_input("New category name (if above is '(new category)')")
+
         cols2 = st.columns(4)
-        sku = cols2[0].text_input("SKU")
-        unit_price = cols2[1].number_input("Unit price", min_value=0.0, step=0.5)
-        initial_stock = cols2[2].number_input("Initial stock", min_value=0, step=1)
-        reorder_level = cols2[3].number_input("Reorder level", min_value=0, step=1, value=10)
+        store = cols2[0].text_input("Store")
+        warehouse = cols2[1].text_input("Warehouse")
+        unit_price = cols2[2].number_input("Price", min_value=0.0, step=0.5)
+        initial_stock = cols2[3].number_input("Stock", min_value=0, step=1)
+
+        cols3 = st.columns(2)
+        sku = cols3[0].text_input("SKU")
+        reorder_level = cols3[1].number_input("Reorder level", min_value=0, step=1, value=10)
+
         description = st.text_area("Description")
-        create_submitted = st.form_submit_button("Add product")
+        product_image = st.file_uploader("Product Image", type=["png", "jpg", "jpeg"])
+
+        create_submitted = st.form_submit_button("Add Product")
+
     if create_submitted:
-        if category_choice == "(new category)" and new_category_name.strip():
-            category = Category.get_or_create(new_category_name)
-        elif category_choice != "(new category)":
-            category = next(c for c in categories if c.name == category_choice)
+        if not name.strip():
+            st.error("Product Name is required.")
         else:
-            category = None
-        _, error = Product.create(
-            user["vendor_id"], name, category.id if category else None,
-            sku, unit_price, description, int(initial_stock), int(reorder_level),
-        )
-        if error:
-            st.error(error)
-        else:
-            st.success(f"Added product {name}.")
-            st.rerun()
+            if category_choice == "(new category)" and new_category_name.strip():
+                category = Category.get_or_create(new_category_name)
+            elif category_choice != "(new category)":
+                category = next(c for c in categories if c.name == category_choice)
+            else:
+                category = None
+
+            product_id, error = Product.create(
+                user["vendor_id"], name, category.id if category else None,
+                sku, unit_price, description, int(initial_stock), int(reorder_level),
+                store=store, warehouse=warehouse,
+            )
+            if error:
+                st.error(error)
+            else:
+                if product_image is not None:
+                    image_path = _save_product_image(product_image, product_id)
+                    Product.update_image(product_id, image_path)
+                st.success(f"Added product {name}.")
+                st.rerun()
 
     if products:
-        st.subheader("Edit / Remove Product")
+        st.subheader("Edit / Update Product")
         product_names = [p["name"] for p in products]
         selected_name = st.selectbox("Select product", product_names, key="manage_product_select")
         selected = next((p for p in products if p["name"] == selected_name), None)
+
         if selected:
+            if selected.get("image_path"):
+                if os.path.exists(selected["image_path"]):
+                    st.image(selected["image_path"], width=160)
+                else:
+                    st.caption("⚠️ Image file not found on disk.")
+
             cols = st.columns(3)
-            edit_price = cols[0].number_input("Unit price", min_value=0.0, step=0.5, value=float(selected["unit_price"]), key="edit_price")
-            edit_sku = cols[1].text_input("SKU", value=selected["sku"] or "", key="edit_sku")
-            if cols[2].button("Save changes"):
-                Product.update(selected["id"], selected["name"], selected["category_id"], edit_sku, edit_price, selected["description"])
+            edit_store = cols[0].text_input("Store", value=selected.get("store") or "", key="edit_store")
+            edit_warehouse = cols[1].text_input("Warehouse", value=selected.get("warehouse") or "", key="edit_warehouse")
+            edit_sku = cols[2].text_input("SKU", value=selected["sku"] or "", key="edit_sku")
+
+            cols2 = st.columns(2)
+            current_category_name = selected.get("category_name") or "(none)"
+            category_options = ["(none)"] + category_names
+            default_index = category_options.index(current_category_name) if current_category_name in category_options else 0
+            edit_category_choice = cols2[0].selectbox(
+                "Category", category_options, index=default_index, key="edit_category"
+            )
+            edit_description = cols2[1].text_input(
+                "Description", value=selected.get("description") or "", key="edit_description"
+            )
+
+            cols3 = st.columns(2)
+            edit_price = cols3[0].number_input(
+                "Price", min_value=0.0, step=0.5, value=float(selected["unit_price"]), key="edit_price"
+            )
+            edit_stock = cols3[1].number_input(
+                "Stock", min_value=0, step=1,
+                value=int(selected["stock_quantity"] or 0), key="edit_stock"
+            )
+
+            new_image = st.file_uploader(
+                "Replace Product Image", type=["png", "jpg", "jpeg"], key="edit_image_uploader"
+            )
+
+            action_cols = st.columns(5)
+
+            if action_cols[0].button("Save Details"):
+                if edit_category_choice == "(none)":
+                    category_id = None
+                else:
+                    category_id = next(c.id for c in categories if c.name == edit_category_choice)
+                Product.update(
+                    selected["id"], selected["name"], category_id,
+                    edit_sku, edit_price, edit_description,
+                    store=edit_store, warehouse=edit_warehouse,
+                )
                 st.success("Product updated.")
                 st.rerun()
-            if st.button("Delete product", key="delete_product_btn"):
+
+            if action_cols[1].button("Update Price"):
+                Product.update_price(selected["id"], edit_price)
+                st.success("Price updated.")
+                st.rerun()
+
+            if action_cols[2].button("Update Stock"):
+                Inventory.adjust_stock(
+                    selected["id"], user["vendor_id"], int(edit_stock), int(selected["reorder_level"] or 10),
+                    reason="manual_adjustment",
+                )
+                st.success("Stock updated.")
+                st.rerun()
+
+            if action_cols[3].button("Upload Image"):
+                if new_image is None:
+                    st.warning("Choose an image file above first.")
+                else:
+                    image_path = _save_product_image(new_image, selected["id"])
+                    Product.update_image(selected["id"], image_path)
+                    st.success("Image uploaded.")
+                    st.rerun()
+
+            if action_cols[4].button("Delete Product"):
                 Product.delete(selected["id"])
                 st.success(f"Deleted {selected['name']}.")
                 st.rerun()
@@ -829,9 +1177,9 @@ def page_view_own_sales(user):
     st.dataframe(sales, width="stretch", hide_index=True)
 
 
-def page_check_inventory(user):
-    st.header("Check Inventory")
-    st.caption("Stock levels for your products.")
+def page_inventory_monitoring(user):
+    st.header("Inventory Monitoring")
+    st.caption("Current stock, stock movement, turnover, and usage trends for your products.")
 
     products = Product.list_for_vendor(user["vendor_id"])
     if not products:
@@ -847,23 +1195,66 @@ def page_check_inventory(user):
         axis=1,
     )
 
-    kpi_row([
-        ("Products", len(df)),
-        ("Low Stock", int((df["status"] == "Low Stock").sum())),
-        ("Out of Stock", int((df["status"] == "Out of Stock").sum())),
-    ])
+    period_days = st.selectbox(
+        "Period for Stock In / Stock Out / Turnover", [7, 30, 90], index=1,
+        format_func=lambda d: f"Last {d} days", key="inventory_period",
+    )
+    summary = InventoryMovement.summary_for_vendor(user["vendor_id"], days=period_days)
 
+    kpi_row([
+        ("Current Stock (units)", summary["current_total_stock"]),
+        ("Stock In", summary["stock_in"]),
+        ("Stock Out", summary["stock_out"]),
+        ("Inventory Turnover", summary["turnover"]),
+        ("Low Stock Items", int((df["status"] == "Low Stock").sum())),
+    ])
+    st.caption(
+        "Inventory Turnover ≈ units sold ÷ current total stock, over the selected period. "
+        "Higher means stock is moving faster."
+    )
+
+    st.subheader("Stock Alerts")
+    alerts = df[df["status"] != "In Stock"][["name", "sku", "stock_quantity", "reorder_level", "status"]]
+    if alerts.empty:
+        st.success("No low-stock or out-of-stock products right now.")
+    else:
+        st.dataframe(alerts, width="stretch", hide_index=True)
+
+    st.subheader("Inventory Charts")
     c1, c2 = st.columns(2)
     with c1:
         status_counts = df["status"].value_counts().reset_index()
         status_counts.columns = ["status", "count"]
         pie_chart(status_counts, "status", "count", "Stock Status Breakdown")
     with c2:
-        bar_chart(df, "name", "stock_quantity", "Stock Quantity by Product")
+        bar_chart(df, "name", "stock_quantity", "Current Stock by Product")
 
-    st.dataframe(df[["name", "sku", "stock_quantity", "reorder_level", "status"]], width="stretch", hide_index=True)
+    movements = InventoryMovement.list_for_vendor(user["vendor_id"], days=period_days)
+    if movements:
+        moves_df = pd.DataFrame(movements)
+        moves_df["day"] = pd.to_datetime(moves_df["occurred_at"]).dt.date
+        daily = moves_df.groupby(["day", "movement_type"])["quantity"].sum().reset_index()
+        c3, c4 = st.columns(2)
+        with c3:
+            daily_in = daily[daily["movement_type"] == "in"][["day", "quantity"]]
+            bar_chart(daily_in, "day", "quantity", "Stock In Over Time")
+        with c4:
+            daily_out = daily[daily["movement_type"] == "out"][["day", "quantity"]]
+            bar_chart(daily_out, "day", "quantity", "Stock Out Over Time")
+    else:
+        st.info("No stock movements recorded yet in this period — sales, restocks, and manual adjustments will show up here.")
 
+    st.subheader("Monthly Usage")
+    monthly = InventoryMovement.monthly_usage_for_vendor(user["vendor_id"], months=6)
+    if monthly:
+        monthly_df = pd.DataFrame(monthly)
+        bar_chart(monthly_df, "month", "units_sold", "Units Sold by Month (last 6 months)")
+    else:
+        st.info("No sales history yet to show monthly usage.")
+
+    st.divider()
     st.subheader("Update Stock")
+    st.caption("Manual changes here are logged as Stock In (increase) or Stock Out (decrease) automatically.")
     product_names = df["name"].tolist()
     selected_name = st.selectbox("Select product", product_names, key="inventory_product_select")
     selected = df[df["name"] == selected_name].iloc[0]
@@ -871,7 +1262,10 @@ def page_check_inventory(user):
     new_stock = cols[0].number_input("Stock quantity", min_value=0, step=1, value=int(selected["stock_quantity"]), key="new_stock_qty")
     new_reorder = cols[1].number_input("Reorder level", min_value=0, step=1, value=int(selected["reorder_level"]), key="new_reorder_level")
     if cols[2].button("Save stock levels"):
-        Inventory.update_stock(int(selected["id"]), int(new_stock), int(new_reorder))
+        Inventory.adjust_stock(
+            int(selected["id"]), user["vendor_id"], int(new_stock), int(new_reorder),
+            reason="manual_adjustment",
+        )
         st.success("Stock levels updated.")
         st.rerun()
 
@@ -980,17 +1374,25 @@ MANAGER_PAGES = {
     "Manage Vendors": page_manage_vendors,
     "Manage Orders": page_manage_orders,
     "Upload Dataset": page_upload_dataset,
+    "Sales Dashboard": page_sales_dashboard,
     "View Analytics": page_view_analytics,
     "Compare Vendors": page_compare_vendors,
+    "Customer Profile": page_customer_profile,
+    "Advanced Search": page_advanced_search,
     "Customer Segmentation": page_customer_segmentation,
+    "Churn Prediction": page_churn,
     "Customer Reviews": page_customer_reviews,
     "Generate Reports": page_generate_reports,
 }
 
 ANALYST_PAGES = {
+    "Sales Dashboard": page_sales_dashboard,
     "View Analytics": page_view_analytics,
     "Compare Vendors": page_compare_vendors,
+    "Customer Profile": page_customer_profile,
+    "Advanced Search": page_advanced_search,
     "Customer Segmentation": page_customer_segmentation,
+    "Churn Prediction": page_churn,
     "Customer Reviews": page_customer_reviews,
     "Generate Reports": page_generate_reports,
 }
@@ -998,7 +1400,7 @@ ANALYST_PAGES = {
 VENDOR_PAGES = {
     "Manage Products": page_manage_products,
     "View Own Sales": page_view_own_sales,
-    "Check Inventory": page_check_inventory,
+    "Inventory Monitoring": page_inventory_monitoring,
     "View Recommendations": page_view_recommendations,
     "Customer Insights": page_customer_insights,
 }

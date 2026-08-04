@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "PowerShell(\\(Get-Content \"C:\\\\Users\\\\potha\\\\OneDrive\\\\Desktop\\\\customers  insights platform\\\\sales.csv\" | Measure-Object -Line\\).Lines)",
-      "PowerShell(python -c \"from streamlit.file_util import get_streamlit_file_path; print\\(get_streamlit_file_path\\('credentials.toml'\\)\\)\")"
-    ]
-  }
-}

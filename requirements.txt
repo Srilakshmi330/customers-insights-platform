@@ -1,10 +1,31 @@
-streamlit
-plotly
-pandas
-Werkzeug
-SQLAlchemy
-psycopg2-binary
-Faker
-scikit-learn
-reportlab
-openpyxl
+# --- Web app / dashboard ---
+streamlit>=1.38
+
+# --- Database ---
+sqlalchemy>=2.0
+psycopg2-binary>=2.9
+
+# --- Data & plotting ---
+pandas>=2.0
+numpy>=1.26
+plotly>=5.20
+
+# --- Auth (password hashing used in models.py) ---
+werkzeug>=3.0
+
+# --- Machine learning ---
+scikit-learn>=1.4
+xgboost>=2.0
+statsmodels>=0.14
+
+# --- MLflow experiment tracking ---
+mlflow>=2.14
+
+# --- Reports (PDF/Excel) ---
+reportlab>=4.0
+openpyxl>=3.1
+
+# --- REST API ---
+fastapi>=0.110
+uvicorn[standard]>=0.29
+pyjwt>=2.8

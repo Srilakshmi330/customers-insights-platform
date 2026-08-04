@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.pyo
+.git/
+.gitignore
+venv/
+.venv/
+*.db
+scratch/
+scripts/
+legacy_supermarket_app/
+.claude/
+uploads/

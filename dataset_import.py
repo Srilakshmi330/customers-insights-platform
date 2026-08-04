@@ -7,7 +7,7 @@ from datetime import datetime
 
 import pandas as pd
 
-from models import Category, CustomerActivity, Inventory, OrderItem, Payment
+from models import Category, CustomerActivity, Inventory, InventoryMovement, OrderItem, Payment
 from models import Customer as CustomerModel
 from models import Order as OrderModel
 from models import Product as ProductModel
@@ -83,6 +83,9 @@ def validate_csv(file_obj):
 
 def import_transactions(df):
     """Writes the validated dataframe into vendors/products/customers/orders.
+    Also logs an inventory-out movement (reason='import') per line item so
+    Inventory Monitoring's Stock Out / Turnover / Monthly Usage reflect bulk
+    imports the same way they reflect manually-placed orders.
     Returns {"orders_created": int, "rows_processed": int, "errors": [...]}."""
     errors = []
     orders_created = 0
@@ -178,6 +181,11 @@ def import_transactions(df):
                     ))
                     if product.inventory:
                         product.inventory.stock_quantity = max(0, product.inventory.stock_quantity - qty)
+                    session.add(InventoryMovement(
+                        product_id=product.id, vendor_id=vendor.id, movement_type="out",
+                        quantity=qty, reason="sale" if status == "completed" else "import",
+                        occurred_at=order_date,
+                    ))
                     session.add(CustomerActivity(
                         customer_id=customer.id, product_id=product.id,
                         activity_type="cart_add", occurred_at=order_date,
